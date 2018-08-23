@@ -6,9 +6,9 @@
     <h1>{{ $article->title }}</h1>
     <p>{{ $article->desc }}</p>
   </div>
+  @auth
+  <a href="{{ url('admin/article/' . $article->id) }}">Modifier l'article</a>
+  @endauth
 </div>
 
-@auth
-coucou
-@endauth
 @endsection
