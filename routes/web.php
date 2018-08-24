@@ -20,6 +20,11 @@ Route::name('articles')->group(function () {
 });
 Route::get('admin/articles', 'AdminArticlesController@index')->middleware('auth');
 Route::get('admin/article/{id}', 'AdminArticleController@index')->middleware('auth');
+Route::post('admin/article/{id}', 'AdminArticleController@edit')->middleware('auth');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

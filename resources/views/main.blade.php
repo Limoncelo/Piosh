@@ -31,7 +31,20 @@
 
     </footer>
     {{ HTML::script('/js/main.js') }}
-  </body>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.js"
+      integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+      crossorigin="anonymous"></script>
+
+<script src="/node_modules/trumbowyg/dist/trumbowyg.min.js"></script>
+<script>
+$(function() {
+  $('textarea').trumbowyg({
+      prefix: 'custom-prefix'
+  });
+})
+</script>
+      </body>
 </html>
 <script>
     $('a[href*="#"]:not([href="#"])').not('a.modal-trigger, a.modal-close').click(function () {

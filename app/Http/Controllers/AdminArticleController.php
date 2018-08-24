@@ -57,7 +57,7 @@ class AdminArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        echo 'coucou';
     }
 
     /**

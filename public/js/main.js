@@ -1,4 +1,3 @@
-
 function sameHeight(group) {
 
     var tallest = 0;
@@ -10,5 +9,7 @@ function sameHeight(group) {
     });
     group.height(tallest);
 }
+$(function() {
+  sameHeight($('.articles .card'))
 
-sameHeight($('.articles .card'))
+})
