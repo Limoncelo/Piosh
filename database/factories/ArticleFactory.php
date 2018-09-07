@@ -15,7 +15,10 @@ use Faker\Generator as Faker;
 
 
 $factory->define(App\Article::class, function (Faker $faker) {
+
+    $category = DB::table('categories')->pluck('id');
     return [
+        'category_id' => $faker->randomElement($category),
         'title' => $faker->sentence,
         'desc' => $faker->paragraph,
     ];

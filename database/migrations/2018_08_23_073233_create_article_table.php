@@ -13,16 +13,16 @@ class CreateArticleTable extends Migration
      */
     public function up()
     {
-
-        Schema::dropIfExists('articles');
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
             $table->text('desc');
             $table->timestamps();
+            $table->unsignedInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
         });
-    }
 
+    }
     /**
      * Reverse the migrations.
      *
