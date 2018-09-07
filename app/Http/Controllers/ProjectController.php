@@ -4,17 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-class ArticlesController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-      $articles = DB::table('articles')->get();
-      return view('articles.articles', ['articles' => $articles]);
+
+        $project = DB::table('projects')->where('id', $id)->first();
+        return view('projects.project', ['project' => $project]);
     }
 
     /**

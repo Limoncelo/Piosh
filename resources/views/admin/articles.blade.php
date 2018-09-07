@@ -15,7 +15,7 @@
 
         <td>{{ $article->id }}</td>
         <td><a href="{{ url('admin/article/' . $article->id) }}">{{ $article->title }}</a></td>
-        <td>{{ $article->desc }}</td>
+        <td>{{ strip_tags($article->desc) }}</td>
 
     </tr>
   @endforeach

@@ -57,7 +57,14 @@ class AdminArticleController extends Controller
      */
     public function edit($id)
     {
-        echo 'coucou';
+        $title = $_POST['title'];
+        $desc = $_POST['desc'];
+        DB::table('articles')
+            ->where('id', $id)
+            ->update(array('title' => $title, 'desc' => $desc));
+        return redirect()->action(
+            'AdminArticleController@index', ['id' => $id]
+        );
     }
 
     /**

@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use DB;
-class ArticlesController extends Controller
+
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,8 +13,7 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-      $articles = DB::table('articles')->get();
-      return view('articles.articles', ['articles' => $articles]);
+        //
     }
 
     /**

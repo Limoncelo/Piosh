@@ -15,7 +15,7 @@ class ArticleController extends Controller
     public function index($id)
     {
         $article = DB::table('articles')->where('id', $id)->first();
-        return view('article', ['article' => $article]);
+        return view('articles.article', ['article' => $article]);
     }
 
     /**

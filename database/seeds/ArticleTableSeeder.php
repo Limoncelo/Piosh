@@ -13,7 +13,7 @@ class ArticleTableSeeder extends Seeder
     {
       DB::table('articles')->insert([
         'title' => str_random(10),
-        'desc' => str_random(100)
+        'desc' => str_random(300)
       ]);
       factory(App\Article::class, 50)->create();
 
