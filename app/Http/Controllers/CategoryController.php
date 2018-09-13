@@ -4,20 +4,16 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use DB;
-
-class ArticleController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function index($id)
+    public function index()
     {
-        $article = DB::table('articles')->where('id', $id)->first();
-        return view('articles.article', ['article' => $article]);
+        //
     }
 
     /**

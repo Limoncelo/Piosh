@@ -3,6 +3,9 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use DB;
+use Illuminate\Support\Facades\View;
+
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,12 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $projects = DB::table('projects')
+            ->latest()
+            ->limit(5)
+            ->get();
+
+        View::share('projects', $projects);
     }
 
     /**

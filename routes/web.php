@@ -11,7 +11,21 @@
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/', 'HomeController@index');
+Route::name('articles')->group(function () {
+    Route::get('articles', 'ArticlesController@index');
+    Route::get('article/{id}', 'ArticleController@index');
 });
-Route::get('/articles', 'ArticleController@index');
+Route::get('admin/articles', 'AdminArticlesController@index')->middleware('auth');
+Route::get('admin/article/{id}', 'AdminArticleController@index')->middleware('auth');
+Route::post('admin/article/{id}', 'AdminArticleController@edit')->middleware('auth');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/projets', 'ProjectsController@index');
+Route::get('/projet/{id}', 'ProjectController@index');
