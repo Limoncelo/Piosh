@@ -1,9 +1,10 @@
-@extends('main')
+@extends('main_admin')
 @section('content')
 
     <div class="container my-5">
-        <div class="row">
-{{ Form::open(array('url' => 'admin/article/' . $article->id, 'class' => 'w-100', 'files' => true)) }}
+    <a href="{{  url('admin/articles')  }}"><i class="fas fa-caret-left"></i>&nbsp; Retour à la liste des articles</a>
+    <div class="row">
+    {{ Form::open(array('url' => 'admin/article/' . $article->id, 'class' => 'w-100', 'files' => true)) }}
     <div class="form-group">
         <label for="title">Titre de l'article</label>
         <input type="text" class="form-control" value="{{ $article->title }}" name="title" id="title">
@@ -19,7 +20,7 @@
     <div class="form-group">
         @if(!empty($article->photo_1))
             {{ HTML::image($article->photo_1, '', array('class' => 'img-fluid')) }}
-
+<br>
         @endif
         {{Form::label('photo_1', 'Photo 1',['class' => 'control-label'])}}
         {{Form::file('photo_1', array("class"=>"form-control-file"))}}
@@ -27,7 +28,7 @@
     <div class="form-group">
         @if(!empty($article->photo_2))
             {{ HTML::image($article->photo_2, '', array('class' => 'img-fluid')) }}
-
+<br>
         @endif
         {{Form::label('photo_2', 'Photo 2',['class' => 'control-label'])}}
         {{Form::file('photo_2', array("class"=>"form-control-file"))}}
@@ -38,12 +39,13 @@
     </div>
     <div class="form-group">
         <label for="youtube">Lien Youtube</label>
-        <input type="text" class="form-control" value="{{ $article->youtube }}" name="youtube" id="youtube" placeholder="()">
+        <input type="text" class="form-control" value="{{ $article->youtube }}" name="youtube" id="youtube" placeholder="(identifiant de la vidéo)">
     </div>
     <div class="form-group">
         <label for="link">Lien</label>
-        <input type="text" class="form-control" value="{{ $article->link }}" name="link" id="link" placeholder="(gauche ou droite)">
+        <input type="text" class="form-control" value="{{ $article->link }}" name="link" id="link" placeholder="">
     </div>
+            <br>
     <input type="submit" class=" btn btn-primary">
 {{ Form::close() }}
 <script>
