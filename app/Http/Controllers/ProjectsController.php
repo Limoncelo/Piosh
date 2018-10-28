@@ -14,8 +14,8 @@ class ProjectsController extends Controller
     public function index()
     {
 
-        $projects = DB::table('projects')->get();
-        return view('projects.projects', ['projectsList' => $projects]);
+        //$projects = DB::table('projects')->get();
+        //return view('projects.projects', ['projectsList' => $projects]);
     }
 
     /**

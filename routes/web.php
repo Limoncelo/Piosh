@@ -18,8 +18,9 @@ Route::name('articles')->group(function () {
 });
 Route::get('admin/articles', 'AdminArticlesController@index')->middleware('auth');
 Route::get('admin/article/{id}', 'AdminArticleController@index')->middleware('auth');
-Route::post('admin/article/{id}', 'AdminArticleController@edit')->middleware('auth');
-Auth::routes();
+Route::post('admin/article/{id}', 'AdminArticleController@update')->middleware('auth');
+Route::get('admin/new_article', 'AdminArticleController@create')->middleware('auth');
+Route::post('admin/new_article', 'AdminArticleController@store')->middleware('auth');
 
 Route::get('/home', 'HomeController@index')->name('home');
 

@@ -1,6 +1,7 @@
 @extends('main')
 @section('content')
 <div class="container">
+  <a class="btn btn-primary" href="{{ url('admin/new_article')}}">Créer un nouvel article</a>
   <table class="table">
     <thead>
     <tr>
