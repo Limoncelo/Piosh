@@ -64,14 +64,14 @@ class AdminArticleController extends Controller
         if(!empty($request->file('photo_1'))) {
             $image = $request->file('photo_1');
             $destinationPath = 'img/articles';
-            $image->move($destinationPath, str_slug(now()) .  $image->getClientOriginalName());
-            $article->photo_1 = $destinationPath . '/' . str_slug(now()) .  $image->getClientOriginalName();
+            $image->move($destinationPath, str_slug(now()) . '-' .  $image->getClientOriginalName());
+            $article->photo_1 = $destinationPath . '/' . str_slug(now()) . '-' .  $image->getClientOriginalName();
         }
         if(!empty($request->file(photo_2))) {
             $image = $request->file('photo_2');
             $destinationPath = 'img/articles';
-            $image->move($destinationPath, str_slug(now()) . $image->getClientOriginalName());
-            $article->photo_2 = $destinationPath . '/' . str_slug(now()) .  $image->getClientOriginalName();
+            $image->move($destinationPath, str_slug(now()) . '-' . $image->getClientOriginalName());
+            $article->photo_2 = $destinationPath . '/' . str_slug(now()) . '-' .  $image->getClientOriginalName();
         }
         $article->id_category = Input::get('id_category');
         $article->pos_photo = Input::get('pos_photo');
@@ -129,8 +129,8 @@ class AdminArticleController extends Controller
         if(!empty($request->file('photo_1'))) {
             $image = $request->file('photo_1');
             $destinationPath = 'img/articles/';
-            $image->move($destinationPath, str_slug(now()) . $image->getClientOriginalName());
-            $image_1 = $destinationPath . now() . $image->getClientOriginalName();
+            $image->move($destinationPath, str_slug(now()) . '-' . $image->getClientOriginalName());
+            $image_1 = $destinationPath . str_slug(now()) . '-' . $image->getClientOriginalName();
         } elseif(!empty($photos->photo_1)){
             $image_1 = $photos->photo_1;
         } else {
@@ -139,8 +139,8 @@ class AdminArticleController extends Controller
         if(!empty($request->file('photo_2'))) {
             $image = $request->file('photo_2');
             $destinationPath = 'img/articles';
-            $image->move($destinationPath, str_slug(now()) . $image->getClientOriginalName());
-            $image_2 = $destinationPath . '/' . str_slug(now()) . $image->getClientOriginalName();
+            $image->move($destinationPath, str_slug(now()) . '-' . $image->getClientOriginalName());
+            $image_2 = $destinationPath . '/' . str_slug(now()) . '-' . $image->getClientOriginalName();
         } elseif(!empty($photos->photo_2)){
             $image_2 = $photos->photo_2;
         } else {

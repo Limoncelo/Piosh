@@ -4,13 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-use App\Article;
+use App\Category;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Carbon;
-class AdminArticleController extends Controller
+class AdminCategoryController extends Controller
 
 {
     /**
@@ -20,8 +20,8 @@ class AdminArticleController extends Controller
      */
     public function index($id)
     {
-        $article = DB::table('articles')->where('id', $id)->first();
-        return view('admin.article', ['article' => $article]);
+        $categorie = DB::table('categories')->where('id', $id)->first();
+        return view('admin.categorie', ['categorie' => $categorie]);
     }
 
     /**
@@ -31,7 +31,7 @@ class AdminArticleController extends Controller
      */
     public function create()
     {
-        return view('admin.new_article');
+        return view('admin.new_categorie');
     }
 
     /**
@@ -56,32 +56,32 @@ class AdminArticleController extends Controller
       if ($validator->fails()) {
         return response()->json($validator->errors(), 204);
       } else {
-        $article = new Article;
-        $article->title = Input::get('title');
-        $article->desc = Input::get('desc');
-        $article->category_id = 1;
-        $article->color = Input::get('color');
+        $categorie = new Article;
+        $categorie->title = Input::get('title');
+        $categorie->desc = Input::get('desc');
+        $categorie->category_id = 1;
+        $categorie->color = Input::get('color');
         if(!empty($request->file('photo_1'))) {
             $image = $request->file('photo_1');
-            $destinationPath = 'img/articles';
+            $destinationPath = 'img/categories';
             $image->move($destinationPath, str_slug(now()) .  $image->getClientOriginalName());
-            $article->photo_1 = $destinationPath . '/' . str_slug(now()) .  $image->getClientOriginalName();
+            $categorie->photo_1 = $destinationPath . '/' . str_slug(now()) .  $image->getClientOriginalName();
         }
         if(!empty($request->file(photo_2))) {
             $image = $request->file('photo_2');
-            $destinationPath = 'img/articles';
+            $destinationPath = 'img/categories';
             $image->move($destinationPath, str_slug(now()) . $image->getClientOriginalName());
-            $article->photo_2 = $destinationPath . '/' . str_slug(now()) .  $image->getClientOriginalName();
+            $categorie->photo_2 = $destinationPath . '/' . str_slug(now()) .  $image->getClientOriginalName();
         }
-        $article->id_category = Input::get('id_category');
-        $article->pos_photo = Input::get('pos_photo');
-        $article->youtube = Input::get('youtube');
-        $article->link = Input::get('link');
+        $categorie->id_category = Input::get('id_category');
+        $categorie->pos_photo = Input::get('pos_photo');
+        $categorie->youtube = Input::get('youtube');
+        $categorie->link = Input::get('link');
 
-        $article->created_at = now();
-        $article->save();
+        $categorie->created_at = now();
+        $categorie->save();
         // redirect
-        return Redirect::to('/admin/articles');
+        return Redirect::to('/admin/categories');
 
       }
     }
@@ -125,10 +125,10 @@ class AdminArticleController extends Controller
         $youtube = $request->youtube;
         $link = $request->link;
 
-        $photos = DB::table('articles')->select('photo_1', 'photo_2')->where('id', $id)->first();
+        $photos = DB::table('categories')->select('photo_1', 'photo_2')->where('id', $id)->first();
         if(!empty($request->file('photo_1'))) {
             $image = $request->file('photo_1');
-            $destinationPath = 'img/articles/';
+            $destinationPath = 'img/categories/';
             $image->move($destinationPath, str_slug(now()) . $image->getClientOriginalName());
             $image_1 = $destinationPath . now() . $image->getClientOriginalName();
         } elseif(!empty($photos->photo_1)){
@@ -138,7 +138,7 @@ class AdminArticleController extends Controller
         }
         if(!empty($request->file('photo_2'))) {
             $image = $request->file('photo_2');
-            $destinationPath = 'img/articles';
+            $destinationPath = 'img/categories';
             $image->move($destinationPath, str_slug(now()) . $image->getClientOriginalName());
             $image_2 = $destinationPath . '/' . str_slug(now()) . $image->getClientOriginalName();
         } elseif(!empty($photos->photo_2)){
@@ -147,7 +147,7 @@ class AdminArticleController extends Controller
             $image_2 = null;
         }
 
-        DB::table('articles')
+        DB::table('categories')
             ->where('id', $id)
             ->update(array(
                 'updated_at' => now(),
