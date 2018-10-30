@@ -20,8 +20,8 @@ class AdminCategoryController extends Controller
      */
     public function index($id)
     {
-        $categorie = DB::table('categories')->where('id', $id)->first();
-        return view('admin.categorie', ['categorie' => $categorie]);
+        $category = DB::table('categories')->where('id', $id)->first();
+        return view('admin.category', ['category' => $category]);
     }
 
     /**
@@ -31,7 +31,7 @@ class AdminCategoryController extends Controller
      */
     public function create()
     {
-        return view('admin.new_categorie');
+        return view('admin.new_category');
     }
 
     /**
@@ -45,8 +45,7 @@ class AdminCategoryController extends Controller
 
             // validate
       $rules = array(
-        'title' => 'required',
-        'desc' => 'required',
+        'title' => 'required'
 
       );
 
@@ -56,30 +55,11 @@ class AdminCategoryController extends Controller
       if ($validator->fails()) {
         return response()->json($validator->errors(), 204);
       } else {
-        $categorie = new Article;
-        $categorie->title = Input::get('title');
-        $categorie->desc = Input::get('desc');
-        $categorie->category_id = 1;
-        $categorie->color = Input::get('color');
-        if(!empty($request->file('photo_1'))) {
-            $image = $request->file('photo_1');
-            $destinationPath = 'img/categories';
-            $image->move($destinationPath, str_slug(now()) .  $image->getClientOriginalName());
-            $categorie->photo_1 = $destinationPath . '/' . str_slug(now()) .  $image->getClientOriginalName();
-        }
-        if(!empty($request->file(photo_2))) {
-            $image = $request->file('photo_2');
-            $destinationPath = 'img/categories';
-            $image->move($destinationPath, str_slug(now()) . $image->getClientOriginalName());
-            $categorie->photo_2 = $destinationPath . '/' . str_slug(now()) .  $image->getClientOriginalName();
-        }
-        $categorie->id_category = Input::get('id_category');
-        $categorie->pos_photo = Input::get('pos_photo');
-        $categorie->youtube = Input::get('youtube');
-        $categorie->link = Input::get('link');
+        $category = new Category;
+        $category->title = Input::get('title');
 
-        $categorie->created_at = now();
-        $categorie->save();
+        $category->created_at = now();
+        $category->save();
         // redirect
         return Redirect::to('/admin/categories');
 
@@ -118,51 +98,15 @@ class AdminCategoryController extends Controller
     {
 
         $title = $request->title;
-        $desc = $request->desc;
-        $color = $request->color;
-        $id_category = $request->id_category;
-        $pos_photo = $request->pos_photo;
-        $youtube = $request->youtube;
-        $link = $request->link;
 
-        $photos = DB::table('categories')->select('photo_1', 'photo_2')->where('id', $id)->first();
-        if(!empty($request->file('photo_1'))) {
-            $image = $request->file('photo_1');
-            $destinationPath = 'img/categories/';
-            $image->move($destinationPath, str_slug(now()) . $image->getClientOriginalName());
-            $image_1 = $destinationPath . now() . $image->getClientOriginalName();
-        } elseif(!empty($photos->photo_1)){
-            $image_1 = $photos->photo_1;
-        } else {
-            $image_1 = null;
-        }
-        if(!empty($request->file('photo_2'))) {
-            $image = $request->file('photo_2');
-            $destinationPath = 'img/categories';
-            $image->move($destinationPath, str_slug(now()) . $image->getClientOriginalName());
-            $image_2 = $destinationPath . '/' . str_slug(now()) . $image->getClientOriginalName();
-        } elseif(!empty($photos->photo_2)){
-            $image_2 = $photos->photo_2;
-        } else {
-            $image_2 = null;
-        }
 
         DB::table('categories')
             ->where('id', $id)
             ->update(array(
                 'updated_at' => now(),
-                'title' => $title,
-                'desc' => $desc,
-                'color' => $color,
-                'photo_1' => $image_1,
-                'photo_2' => $image_2,
-//                'category_id' => $id_category,
-            'category_id' => 1,
-                'pos_photo' => $pos_photo,
-                'youtube' => $youtube,
-                'link' => $link));
+                'title' => $title));
         return redirect()->action(
-            'AdminArticleController@index', ['id' => $id]
+            'AdminCategoryController@index', ['id' => $id]
         );
     }
 

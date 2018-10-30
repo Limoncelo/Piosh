@@ -7,7 +7,6 @@
             <tr>
                 <th>#</th>
                 <th>Titre</th>
-                <th>Description</th>
             </tr>
             </thead>
             <tbody>
@@ -15,7 +14,7 @@
                 <tr>
 
                     <td>{{ $categorie->id }}</td>
-                    <td><a href="{{ url('admin/categorie/' . $categorie->id) }}">{{ $categorie->title }}</a></td>
+                    <td><a href="{{ url('admin/category/' . $categorie->id) }}">{{ $categorie->title }}</a></td>
 
                 </tr>
             @endforeach

@@ -14,6 +14,19 @@
         <textarea type="textarea" name="desc" id="desc" class="form-control">{{ $article->desc }}</textarea>
     </div>
     <div class="form-group">
+        <label for="category_id">Catégorie</label>
+        <select id="category_id" name="category_id" class="form-control">
+            <option  disabled value="0">Choisir une catégorie</option>
+            @foreach($categories as $category)
+                @if($category->id === $article->category_id)
+                    <option selected value="{{ $category->id }}">{{ $category->title }}</option>
+                @else
+                    <option  value="{{ $category->id }}">{{ $category->title }}</option>
+                @endif
+            @endforeach
+        </select>
+    </div>
+    <div class="form-group">
         <label for="color">Couleur</label>
         <input type="text" class="form-control" value="{{ $article->color }}" name="color" id="color" placeholder="(ex : #ebebeb)">
     </div>

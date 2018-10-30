@@ -20,8 +20,9 @@ class AdminArticleController extends Controller
      */
     public function index($id)
     {
+        $categories = DB::table('categories')->get();
         $article = DB::table('articles')->where('id', $id)->first();
-        return view('admin.article', ['article' => $article]);
+        return view('admin.article', ['article' => $article, 'categories' => $categories]);
     }
 
     /**
@@ -31,7 +32,8 @@ class AdminArticleController extends Controller
      */
     public function create()
     {
-        return view('admin.new_article');
+        $categories = DB::table('categories')->get();
+        return view('admin.new_article', ['categories' => $categories]);
     }
 
     /**
@@ -59,7 +61,7 @@ class AdminArticleController extends Controller
         $article = new Article;
         $article->title = Input::get('title');
         $article->desc = Input::get('desc');
-        $article->category_id = 1;
+        $article->category_id = Input::get('category_id');
         $article->color = Input::get('color');
         if(!empty($request->file('photo_1'))) {
             $image = $request->file('photo_1');
@@ -67,13 +69,13 @@ class AdminArticleController extends Controller
             $image->move($destinationPath, str_slug(now()) . '-' .  $image->getClientOriginalName());
             $article->photo_1 = $destinationPath . '/' . str_slug(now()) . '-' .  $image->getClientOriginalName();
         }
-        if(!empty($request->file(photo_2))) {
+        if(!empty($request->file('photo_2'))) {
             $image = $request->file('photo_2');
             $destinationPath = 'img/articles';
             $image->move($destinationPath, str_slug(now()) . '-' . $image->getClientOriginalName());
             $article->photo_2 = $destinationPath . '/' . str_slug(now()) . '-' .  $image->getClientOriginalName();
         }
-        $article->id_category = Input::get('id_category');
+        $article->category_id = Input::get('category_id');
         $article->pos_photo = Input::get('pos_photo');
         $article->youtube = Input::get('youtube');
         $article->link = Input::get('link');
@@ -120,7 +122,7 @@ class AdminArticleController extends Controller
         $title = $request->title;
         $desc = $request->desc;
         $color = $request->color;
-        $id_category = $request->id_category;
+        $id_category = $request->category_id;
         $pos_photo = $request->pos_photo;
         $youtube = $request->youtube;
         $link = $request->link;
@@ -156,8 +158,7 @@ class AdminArticleController extends Controller
                 'color' => $color,
                 'photo_1' => $image_1,
                 'photo_2' => $image_2,
-//                'category_id' => $id_category,
-            'category_id' => 1,
+                'category_id' => $id_category,
                 'pos_photo' => $pos_photo,
                 'youtube' => $youtube,
                 'link' => $link));

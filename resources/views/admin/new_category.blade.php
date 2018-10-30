@@ -4,9 +4,9 @@
     <div class="container my-5">
         <a href="{{  url('admin/categories')  }}"><i class="fas fa-caret-left"></i>&nbsp; Retour à la liste des categories</a>
         <div class="row">
-{{ Form::open(array('url' => 'admin/new_categorie', 'class' => 'w-100', 'files' => true)) }}
+{{ Form::open(array('url' => 'admin/new_category', 'class' => 'w-100', 'files' => true)) }}
             <div class="form-group">
-                <label for="title">Titre de l'categorie</label>
+                <label for="title">Titre de la categorie</label>
                 <input type="text" class="form-control"  name="title" id="title">
             </div>
             <br>
