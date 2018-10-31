@@ -32,6 +32,14 @@ Route::post('admin/category/{id}', 'AdminCategoryController@update')->middleware
 Route::get('admin/new_category', 'AdminCategoryController@create')->middleware('auth');
 Route::post('admin/new_category', 'AdminCategoryController@store')->middleware('auth');
 
+
+//ADMIN EQUIPE
+Route::get('admin/equipes', 'AdminEquipesController@index')->middleware('auth');
+Route::get('admin/equipe/{id}', 'AdminEquipeController@index')->middleware('auth');
+Route::post('admin/equipe/{id}', 'AdminEquipeController@update')->middleware('auth');
+Route::get('admin/new_equipe', 'AdminEquipeController@create')->middleware('auth');
+Route::post('admin/new_equipe', 'AdminEquipeController@store')->middleware('auth');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();

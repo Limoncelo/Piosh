@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="container my-5">
-        <a href="{{  url('admin/categories')  }}"><i class="fas fa-caret-left"></i>&nbsp; Retour à la liste des categories</a>
+        <a href="{{  url('admin/categories')  }}" class="my-3"><i class="fas fa-caret-left"></i>&nbsp; Retour à la liste des categories</a>
 
         <div class="row">
 {{ Form::open(array('url' => 'admin/category/' . $category->id, 'class' => 'w-100')) }}

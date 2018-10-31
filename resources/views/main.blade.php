@@ -87,7 +87,10 @@
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
+                                    <hr>
                                     <a class="dropdown-item" href="{{ url('admin/articles') }}">Tous les articles</a>
+                                    <a class="dropdown-item" href="{{ url('admin/categories') }}">Toutes les catégories</a>
+                                    <a class="dropdown-item" href="{{ url('admin/equipes') }}">L'équipe</a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                         @csrf

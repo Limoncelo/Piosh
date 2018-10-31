@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Model;
 
-class Article extends Model
+class Equipe extends Model
 {
     use Notifiable;
 
@@ -15,7 +15,7 @@ class Article extends Model
      * @var array
      */
     protected $fillable = [
-        'title', 'desc', 'category_id', 'color', 'photo_1', 'photo_2', 'pos_photo', 'youtube', 'link'
+        'nom', 'desc', 'category_id', 'photo', 'color'
     ];
 
     /**

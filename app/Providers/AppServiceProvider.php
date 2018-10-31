@@ -16,7 +16,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $projects = DB::table('projects')
+        $projects = DB::table('articles')
+            ->where('category_id', 1)
             ->latest()
             ->limit(5)
             ->get();

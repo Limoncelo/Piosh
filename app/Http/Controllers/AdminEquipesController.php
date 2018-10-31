@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
-class ProjectsController extends Controller
+
+class AdminEquipesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +14,8 @@ class ProjectsController extends Controller
      */
     public function index()
     {
-
-        $projects = DB::table('articles')->where('category_id', 1)->get();
-        return view('projects.projects', ['projectsList' => $projects]);
+      $equipes = DB::table('equipes')->get();
+      return view('admin.equipes', ['equipes' => $equipes]);
     }
 
     /**
