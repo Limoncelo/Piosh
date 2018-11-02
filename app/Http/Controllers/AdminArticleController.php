@@ -175,6 +175,7 @@ class AdminArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('articles')->where('id', $id)->delete();
+        return Redirect::to('/admin/articles');
     }
 }

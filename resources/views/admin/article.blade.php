@@ -2,8 +2,11 @@
 @section('content')
 
     <div class="container my-5">
-    <a href="{{  url('admin/articles')  }}" class="my-3"><i class="fas fa-caret-left"></i>&nbsp; Retour à la liste des articles</a>
+    <a href="{{  url('admin/articles')  }}" class="d-block mb-5"><i class="fas fa-caret-left"></i>&nbsp; Retour à la liste des articles</a>
     <div class="row">
+
+
+
     {{ Form::open(array('url' => 'admin/article/' . $article->id, 'class' => 'w-100', 'files' => true)) }}
     <div class="form-group">
         <label for="title">Titre de l'article</label>
@@ -61,6 +64,17 @@
             <br>
     <input type="submit" class=" btn btn-primary">
 {{ Form::close() }}
+
+        <br><br>
+        {{ Form::open(array('url' => 'admin/delete_article/' . $article->id, 'class' => 'w-100')) }}
+
+            {{ csrf_field() }}
+            {{ method_field('DELETE') }}
+            <div class="form-group">
+                <button type="submit" class="btn btn-danger">Supprimer cet article</button>
+            </div>
+
+        {{ Form::close() }}
 <script>
 
 

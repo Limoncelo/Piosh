@@ -7,6 +7,7 @@
             <tr>
                 <th>#</th>
                 <th>Titre</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -14,7 +15,12 @@
                 <tr>
 
                     <td>{{ $categorie->id }}</td>
-                    <td><a href="{{ url('admin/category/' . $categorie->id) }}">{{ $categorie->title }}</a></td>
+                    <td>
+                        <a href="{{ url('admin/category/' . $categorie->id) }}">{{ $categorie->title }}</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" href="{{  url('admin/delete_category/' . $categorie->id)  }}">Supprimer la catégorie</a>
+                    </td>
 
                 </tr>
             @endforeach

@@ -45,15 +45,11 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
+                        @foreach($menu as $article)
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Qui sommes-nous</a>
+                            <a class="nav-link" href="{{ url('article/' .$article->id) }}">{{ $article->title }}</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Nos actions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Nos outils</a>
-                        </li>
+                        @endforeach
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Nos projets
@@ -65,9 +61,6 @@
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ url('projets') }}">Tous nos projets</a>
                             </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pour aller plus loin</a>
                         </li>
 
                     </ul>

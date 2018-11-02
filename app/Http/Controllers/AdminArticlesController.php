@@ -14,7 +14,11 @@ class AdminArticlesController extends Controller
      */
     public function index()
     {
-      $articles = DB::table('articles')->get();
+      $articles = DB::table('articles')
+          ->select('articles.title as title', 'articles.desc as desc', 'categories.title as catTitle', 'articles.id as id')
+          ->leftJoin('categories', 'articles.category_id', '=', 'categories.id')
+          ->get();
+
       return view('admin.articles', ['articles' => $articles]);
     }
 

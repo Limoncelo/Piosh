@@ -22,7 +22,9 @@ class AppServiceProvider extends ServiceProvider
             ->limit(5)
             ->get();
 
+        $menu = DB::table('articles')->where('category_id', 4)->get();
         View::share('projects', $projects);
+        View::share('menu', $menu);
     }
 
     /**

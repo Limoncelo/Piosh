@@ -12,6 +12,8 @@
     <input type="submit" class=" btn btn-primary">
 {{ Form::close() }}
 
+            <br><br>
+            <a class="btn btn-danger" href="{{  url('admin/delete_category/' . $category->id)  }}">Supprimer la catégorie</a>
         </div>
     </div>
 

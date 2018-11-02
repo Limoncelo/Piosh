@@ -1,4 +1,5 @@
 
+<?php $odd = true ?>
 <div class="container my-5">
     <div class="timeline_caption">
         <h2 class="text-center orange">PIOSH aime travailler en mêlant différents axes et méthodes</h2>
@@ -6,7 +7,11 @@
 
     <div id="cd-timeline" class="cd-container">
         @foreach($timeline as $item)
-            <div class="cd-timeline-block cd-timeline-block-left">
+            @if($odd)
+                <div class="cd-timeline-block cd-timeline-block-right">
+            @else
+                <div class="cd-timeline-block cd-timeline-block-left">
+            @endif
                 <div class="cd-timeline-img cd-picture">
                 </div>
                 <div class="cd-timeline-content">
@@ -20,6 +25,7 @@
                     </div>
                 </div>
             </div>
+            <?php $odd = !$odd ?>
         @endforeach
 
     </div>
