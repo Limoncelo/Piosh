@@ -101,10 +101,13 @@
 
             <ul>
                 <li>
-                    <a href="#"><i class="fab fa-facebook-f"></i>&nbsp;</a>
+                    <a href="http://www.facebook.fr/PIOSH.Lyon" target="_blank"><i class="fab fa-facebook-f"></i>&nbsp;</a>
                 </li>
                 <li>
-                    <a href="#"><i class="fab fa-twitter"></i>&nbsp;</a>
+                    <a href="http://www.twitter.com/PIOSH_Lyon" target="_blank"><i class="fab fa-twitter"></i>&nbsp;</a>
+                </li>
+                <li>
+                    <a href="htpp://www.linkedin.com/company/piosh-lyon" target="_blank"><i class="fab fa-linkedin"></i>&nbsp;</a>
                 </li>
             </ul>
         </div>
