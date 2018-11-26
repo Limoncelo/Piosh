@@ -1,32 +1,33 @@
+@import url('https://fonts.googleapis.com/css?family=Economica:400,400i,700,700i');
+
 body{
-background: rgb(245,245,245);
-  color: black;
+  background: rgb(245,245,245);
+  color: #424242;
   font-size: 15px;
-  font-family: Helvetica;
+  font-family: 'Economica';
 }
 
 h1{
-  font-family: Amatic SC;
   color: white;
   font-weight: lighter;
   font-size: 200px;
 }
 
 b {
-  font-family: Helvetica;
   color: white;
   font-size: 17px;
   font-style:italic;
 }
+body #div_component p {
+  font-size: 20px;
 
+}
 c {
-  font-family: Helvetica;
   color: white;
   font-size: 40px;
 }
 
 h2 {
-  font-family: Arial;
   color: black;
   font-weight: 600;
   font-size: 20px;
@@ -35,7 +36,7 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: purple;
+  color: #E5512F !important;
 }
 
 .banner{
@@ -57,8 +58,6 @@ a:hover {
   padding: 50px 0;
   width: 90%;
   margin: auto;
-  font-size: 20px;
-  color: grey;
   text-align:justify;
   font-weight: lighter;
 }
@@ -79,7 +78,8 @@ ul {
 
 @media screen and (min-width: 768px) {
   .banner {
-    padding: 180px;
+    /*padding: 20px;*/
+    height: 400px;
   }
 
   .card {
@@ -161,7 +161,13 @@ body .cd-timeline-img {
   box-shadow: -5px -5px 0px 0px #7D1D18;
 }
 
+body .cd-timeline-content a:hover {
+  text-decoration: none;
+}
 
+body .cd-timeline-content a:hover h4 {
+  color: #E5512F !important;
+}
 .wrapper {
   max-width: 680px;
   margin: 30px auto;
@@ -217,4 +223,31 @@ body .cd-timeline-img {
   width: 100%;
   top: 0;
   left: 0;
+}
+
+nav .navbar-nav .nav-item:hover .nav-link {
+  color: #E5512F;
+}
+
+.white {
+  color: #fff;
+}
+.black{
+  color: #000;
+}
+
+body .card {
+  border: 1px solid #E5512F;
+}
+
+body .btn.btn-primary {
+  border: 1px solid #E5512F;
+  background-color: transparent;
+  color: #000;
+  transition : all 0.2s;
+}
+
+body .btn.btn-primary:hover {
+  background-color: #E5512F;
+  color: #fff !important;
 }

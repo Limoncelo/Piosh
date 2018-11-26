@@ -4,7 +4,6 @@
 /public/img/articles/*
 /public/img/equipes/*
 /storage/*.key
-/vendor
 /.idea
 /.vscode
 /.vagrant

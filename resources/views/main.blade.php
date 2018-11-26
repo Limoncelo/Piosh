@@ -33,8 +33,8 @@
 </head>
 <body>
 
-    <div id="div_component">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div id="div_component" class="pt-5">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="/">
                     <!--<img src="{{ asset('img/logo.jpg') }}" class="img-responsive">-->PIOSH</a>

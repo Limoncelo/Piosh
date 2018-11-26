@@ -18,9 +18,11 @@
                     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                         <div class="flipper">
 
+                           <a href="{{ url('article/' . $item->id) }}">
                             <div class="front">
                                 <h4 class="text-center red">{{ $item ->title }}</h4>
                             </div>
+                           </a>
                         </div>
                     </div>
                 </div>
