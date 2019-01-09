@@ -6,8 +6,8 @@
             <div class="row justify-content-center actus_slider">
                 @foreach($actus as $actu)
 
-                <div class=" col-sm-12 col-md-6 col-lg-4">
-                    <div class="card actu valign-middle">
+                <div class="">
+                    <div class="card actu valign-middle px-3">
                         {{ HTML::image($actu->photo_1, $actu->title, array('class' => 'img-fluid')) }}
 
                         <br>

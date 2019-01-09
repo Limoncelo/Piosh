@@ -21,7 +21,7 @@ function fixedFooter() {
 $(function() {
   sameHeight($('.articles .card'));
   sameHeight($('.projects .card'));
-  sameHeight($('.actu.card'));
+  sameHeight($('.actus .actu.card'));
   fixedFooter();
   window.sr = ScrollReveal();
 
@@ -49,6 +49,49 @@ $(function() {
 
     sr.reveal('.cd-timeline-block-right', configRight);
 
+
+    $('.actus .actus_slider').slick({
+        arrows: true,
+        dots: false,
+        infinite: true,
+        speed: 200,
+        accessibility: true,
+        autoplay: false,
+        fade: false,
+        cssEase: 'linear',
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        responsive: [
+            {
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 1,
+                }
+            },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            },
+            {
+                breakpoint: 576,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
 
 });
 

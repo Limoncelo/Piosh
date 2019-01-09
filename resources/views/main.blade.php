@@ -4,6 +4,8 @@
     <title>PIOSH</title>
     {{ HTML::style('/css/main.css') }}
     {{ HTML::style('/css/timeline.css') }}
+    {{ HTML::style('/js/slick/slick.css') }}
+    {{ HTML::style('/js/slick/slick-theme.css') }}
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Amatic+SC"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica"/>
     <!-- FONT AWESOME -->
@@ -115,13 +117,14 @@
     </footer>
 </div>
 
+    <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"></script>
+
     {{ HTML::script('/js/main.js') }}
     {{ HTML::script('/js/timeline.js') }}
-<script
-        src="https://code.jquery.com/jquery-3.3.1.js"
-        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-        crossorigin="anonymous"></script>
-
+    {{ HTML::script('/js/slick/slick.js') }}
 <!-- Include JS file FROALA. -->
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.4/js/froala_editor.min.js'></script>
 

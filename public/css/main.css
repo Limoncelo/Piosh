@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Economica:400,400i,700,700i');
 
-body{
-  background: rgb(245,245,245);
+html body{
   color: #424242;
-  font-size: 15px;
-  font-family: 'Economica';
+  font-size: 23px;
+  font-family: 'Economica' !important;
+
 }
 
 h1{
@@ -21,6 +21,9 @@ b {
 body #div_component p {
   font-size: 20px;
 
+}
+body .btn {
+  font-size: 1.2rem;
 }
 c {
   color: white;
@@ -54,6 +57,11 @@ a:hover {
   color: white;
 }
 
+.contact-anchor {
+  font-family: 'Economica';
+  font-size: 35px;
+}
+
 .intro{
   padding: 50px 0;
   width: 90%;
@@ -61,7 +69,22 @@ a:hover {
   text-align:justify;
   font-weight: lighter;
 }
+.slick-slide {
+  height: auto !important;
+}
+body .slick-prev:before, body .slick-next:before {
+  color: #E5512F !important;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+body .slick-next:before {
+  content: '\f0da';
 
+}
+body .slick-prev:before {
+  content: '\f0d9';
+
+}
 .card{
   width: 300px;
   padding: 30px;
