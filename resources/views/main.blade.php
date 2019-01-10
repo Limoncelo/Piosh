@@ -2,6 +2,7 @@
 <head>
     <meta charset="utf-8">
     <title>PIOSH</title>
+    {{ HTML::style('/css/app.css') }}
     {{ HTML::style('/css/main.css') }}
     {{ HTML::style('/css/timeline.css') }}
     {{ HTML::style('/js/slick/slick.css') }}
