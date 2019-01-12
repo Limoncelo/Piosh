@@ -2,6 +2,7 @@
 <head>
     <meta charset="utf-8">
     <title>PIOSH</title>
+    <meta name="description" content="PIOSH - Cabinet de Recherche-Action">
     {{ HTML::style('/css/app.css') }}
     {{ HTML::style('/css/main.css') }}
     {{ HTML::style('/css/timeline.css') }}

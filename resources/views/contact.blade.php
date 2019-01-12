@@ -6,7 +6,7 @@
                 35400 SAINT-MALO</p>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6">
-            <img class="img-fluid" src="https://fakeimg.pl/1200x1000/ebebeb/?text=no-image&font=lobster" alt="picture description">
+            <img class="img-fluid" src="{{ URL::asset('img/piosh_banniere.png') }}" alt="picture description">
 
         </div>
     </div>

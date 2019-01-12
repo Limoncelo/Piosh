@@ -59,6 +59,7 @@
     </div>
         @if(!empty($equipe))
         <div class="equipe">
+            <h2 class="text-center">Les têtes de PIOSH</h2>
             <div class="row">
                 @foreach($equipe as $item)
                     <div class="col-12 col-md-6 col-xl-3">

@@ -19,7 +19,7 @@ b {
   font-style:italic;
 }
 body #div_component p {
-  font-size: 20px;
+  font-size: 22px;
 
 }
 body .btn {
@@ -39,7 +39,7 @@ a {
 }
 a:hover {
   text-decoration: none;
-  color: #E5512F !important;
+  color: #d9411d !important;
 }
 
 .banner{
@@ -73,7 +73,7 @@ a:hover {
   height: auto !important;
 }
 body .slick-prev:before, body .slick-next:before {
-  color: #E5512F !important;
+  color: #d9411d !important;
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
 }
@@ -102,7 +102,7 @@ ul {
 @media screen and (min-width: 768px) {
   .banner {
     /*padding: 20px;*/
-    height: 400px;
+    height: 500px;
   }
 
   .card {
@@ -117,6 +117,9 @@ footer i {
   width: 2em !important;
   border-radius: 0;
   transition: all 0.4s ease;
+}
+footer a:hover {
+  text-decoration: none;
 }
 footer a:hover i {
   border-radius: 50%;
@@ -157,11 +160,11 @@ footer li {
 }
 
 .orange {
-  color: #E5512F !important;
+  color: #d9411d !important;
 }
 
 .red {
-  color: #7D1D18 !important;
+  color: #6e1229 !important;
 }
 
 @media only screen and (min-width: 992px) {
@@ -172,16 +175,20 @@ footer li {
     left: 52%                            ;
   }
 }
+body .cd-timeline-block {
+  visibility: hidden;
+}
 body .cd-timeline-content {
   background-color: #F8F9FA;
 }
 
 body .cd-timeline-img.cd-picture, .cd-timeline-img.cd-movie, .cd-timeline-img.cd-location {
   background: #E5512F;
+  border-radius: 50%;
 }
 
 body .cd-timeline-img {
-  box-shadow: -5px -5px 0px 0px #7D1D18;
+  box-shadow: none;
 }
 
 body .cd-timeline-content a:hover {
@@ -189,7 +196,7 @@ body .cd-timeline-content a:hover {
 }
 
 body .cd-timeline-content a:hover h4 {
-  color: #E5512F !important;
+  color: #d9411d !important;
 }
 .wrapper {
   max-width: 680px;
@@ -249,7 +256,7 @@ body .cd-timeline-content a:hover h4 {
 }
 
 nav .navbar-nav .nav-item:hover .nav-link {
-  color: #E5512F;
+  color: #d9411d;
 }
 
 .white {
@@ -260,17 +267,17 @@ nav .navbar-nav .nav-item:hover .nav-link {
 }
 
 body .card {
-  border: 1px solid #E5512F;
+  border: 1px solid #d9411d;
 }
 
 body .btn.btn-primary {
-  border: 1px solid #E5512F;
+  border: 1px solid #d9411d;
   background-color: transparent;
   color: #000;
   transition : all 0.2s;
 }
 
 body .btn.btn-primary:hover {
-  background-color: #E5512F;
+  background-color: #d9411d;
   color: #fff !important;
 }
