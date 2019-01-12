@@ -123,9 +123,9 @@
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
 
+    {{ HTML::script('/js/slick/slick.js') }}
     {{ HTML::script('/js/main.js') }}
     {{ HTML::script('/js/timeline.js') }}
-    {{ HTML::script('/js/slick/slick.js') }}
 <!-- Include JS file FROALA. -->
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.4/js/froala_editor.min.js'></script>
 
