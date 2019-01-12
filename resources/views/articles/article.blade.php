@@ -57,6 +57,19 @@
         {{ HTML::script('/js/youtube.js') }}
       @endif
     </div>
+        @if(!empty($equipe))
+        <div class="equipe">
+            <div class="row">
+                @foreach($equipe as $item)
+                    <div class="col-12 col-md-6 col-xl-3">
+                        {{ HTML::image($item->photo, $item->nom, array('class' => 'img-fluid')) }}
+                        <h2 {{ !empty($item->color) ? 'style=color:' . $item->color  : "" }}>{{ $item->nom }}</h2>
+                        <div class="description">{!!  $item->description !!}</div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        @endif
     @auth
       <div class="my-5">
         <a href="{{ url('admin/article/' . $article->id) }}">Modifier l'article</a>

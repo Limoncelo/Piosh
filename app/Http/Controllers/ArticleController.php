@@ -17,7 +17,13 @@ class ArticleController extends Controller
     public function index($id)
     {
         $article = DB::table('articles')->where('id', $id)->first();
-        return view('articles.article', ['article' => $article]);
+
+        if($id == 2) {
+            $equipe = DB::table('equipes')->get();
+        } else {
+            $equipe = array();
+        }
+        return view('articles.article', ['article' => $article, 'equipe' => $equipe]);
     }
 
     /**

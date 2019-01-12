@@ -8,7 +8,6 @@
     {{ HTML::style('/js/slick/slick.css') }}
     {{ HTML::style('/js/slick/slick-theme.css') }}
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Amatic+SC"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica"/>
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
           integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
