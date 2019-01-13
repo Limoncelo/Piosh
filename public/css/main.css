@@ -47,6 +47,7 @@ a:hover {
   background-image: url("https://static.pexels.com/photos/891683/pexels-photo-891683.jpeg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center center;
   padding: 50px;
   color: white;
   text-shadow: 1px 1px 5px black;
