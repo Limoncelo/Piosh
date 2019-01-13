@@ -12,7 +12,7 @@
         @endif
         <div class="card-body">
           <h5 class="card-title">{{ $article->title }}</h5>
-          <p class="card-text">{!!  strlen($article->desc) > 100 ? substr($article->desc, 0, 100) . '...' : $article->desc !!}</p>
+          <p class="card-text">{!!  strlen($article->desc) > 100 ? substr(strip_tags($article->desc), 0, 100) . '...' : $article->desc !!}</p>
           <a href="{{ url('article/' . $article->id) }}" class="btn btn-primary">En savoir +</a>
         </div>
       </div>
