@@ -14,7 +14,7 @@
 
                         <br>
                         <h2 class="text-center orange">{{ $actu->title }}</h2>
-                        {{ strlen($article->desc) > 50 ? substr(strip_tags($actu->desc), 0, 50) . '...' : $actu->desc }}
+                        {{ strlen($actu->desc) > 50 ? substr(strip_tags($actu->desc), 0, 50) . '...' : $actu->desc }}
                         <a href="{{ url('article/' . $actu->id) }}" class="btn btn-primary">En savoir +</a>
                     </div>
                 </div>
