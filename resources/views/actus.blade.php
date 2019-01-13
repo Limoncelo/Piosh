@@ -14,7 +14,7 @@
 
                         <br>
                         <h2 class="text-center orange">{{ $actu->title }}</h2>
-                        {{ substr(strip_tags($actu->desc), 0, 50) }}
+                        {{ substr(strip_tags($actu->desc), 0, 50) . '...' }}
                         <a href="{{ url('article/' . $actu->id) }}" class="btn btn-primary">En savoir +</a>
                     </div>
                 </div>
