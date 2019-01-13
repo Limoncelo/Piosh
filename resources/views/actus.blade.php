@@ -8,7 +8,9 @@
 
                 <div class="">
                     <div class="card actu valign-middle px-3">
-                        {{ HTML::image($actu->photo_1, $actu->title, array('class' => 'img-fluid')) }}
+                        @if(!empty($actu->photo_1))
+                            {{ HTML::image($actu->photo_1, $actu->title, array('class' => 'img-fluid')) }}
+                        @endif
 
                         <br>
                         <h2 class="text-center orange">{{ $actu->title }}</h2>

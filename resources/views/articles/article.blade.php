@@ -15,8 +15,9 @@
           <div class="desc"> {!!  $article->desc !!}</div>
 
         @else
+
           <div class="w-100 text-center">
-            {{ HTML::image($article->photo_2, '', array('class' => 'img-fluid mx-auto')) }}
+                {{ HTML::image($article->photo_2, '', array('class' => 'img-fluid mx-auto')) }}
           </div>
 
         @endif
@@ -29,7 +30,7 @@
         @else
           <div class="desc"> {!!  $article->desc !!}</div>
 
-        @endif
+    @endif
 
       </div>
       @else
