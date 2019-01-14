@@ -14,7 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::name('articles')->group(function () {
     Route::get('articles', 'ArticlesController@index');
-    Route::get('article/{id}', 'ArticleController@index');
+    Route::get('article/{id}-{title}', 'ArticleController@index');
 });
 
 //ADMIN ARTICLES
@@ -48,4 +48,4 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/projets', 'ProjectsController@index');
-Route::get('/projet/{id}', 'ProjectController@index');
+Route::get('/projet/{id}-{title}', 'ProjectController@index');
