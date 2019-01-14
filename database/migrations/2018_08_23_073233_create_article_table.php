@@ -30,8 +30,7 @@ class CreateArticleTable extends Migration
      */
     public function down()
     {
-        Schema::table('articles', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('articles');
+
     }
 }

@@ -16,7 +16,9 @@ class ArticleController extends Controller
 
     public function index($id)
     {
+
         $article = DB::table('articles')->where('id', $id)->first();
+
 
         if($id == 2) {
             $equipe = DB::table('equipes')->get();
