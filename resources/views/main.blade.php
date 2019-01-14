@@ -50,7 +50,7 @@
                     <ul class="navbar-nav">
                         @foreach($menu as $article)
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('article/' .$article->id) }}">{{ $article->title }}</a>
+                            <a class="nav-link" href="{{ url('article/' .$article->id) . '-' . CUSTOM_SLUG($article->title) }}">{{ $article->title }}</a>
                         </li>
                         @endforeach
                         <li class="nav-item dropdown">
@@ -59,7 +59,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 @foreach( $projects as $project)
-                                    <a class="dropdown-item" href="{{ url('projet/' .$project->id) }}">{{ $project->title }}</a>
+                                    <a class="dropdown-item" href="{{ url('projet/' . $project->id) . '-' . CUSTOM_SLUG($project->title) }}">{{ $project->title }}</a>
                                 @endforeach
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ url('projets') }}">Tous nos projets</a>

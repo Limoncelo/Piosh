@@ -13,7 +13,7 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ $project->title }}</h5>
                             <p class="card-text">{!!  strlen($project->desc) > 100 ? substr($project->desc, 0, 100) . '...' : $project->desc !!}</p>
-                            <a href="{{ url('projet/' . $project->id) }}" class="btn btn-primary">En savoir +</a>
+                            <a href="{{ url('projet/' . $project->id . '-' . CUSTOM_SLUG($project->title)) }}" class="btn btn-primary">En savoir +</a>
                         </div>
                     </div>
                 </div>

@@ -16,7 +16,7 @@
           <p class="card-text">
             {{ CUSTOM_SUBSTR($article->desc, 100, true, true, 'b') }}
             </p>
-          <a href="{{ url('article/' . $article->id) }}" class="btn btn-primary">En savoir +</a>
+          <a href="{{ url('article/' . $article->id . '-' . CUSTOM_SLUG($article->title)) }}" class="btn btn-primary">En savoir +</a>
         </div>
       </div>
     </div>
