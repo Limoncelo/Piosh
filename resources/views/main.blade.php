@@ -2,13 +2,13 @@
 <head>
     <meta charset="utf-8">
     <title>PIOSH</title>
+    <meta name="description" content="PIOSH - Cabinet de Recherche-Action">
     {{ HTML::style('/css/app.css') }}
     {{ HTML::style('/css/main.css') }}
     {{ HTML::style('/css/timeline.css') }}
     {{ HTML::style('/js/slick/slick.css') }}
     {{ HTML::style('/js/slick/slick-theme.css') }}
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Amatic+SC"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica"/>
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
           integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -122,9 +122,9 @@
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"></script>
 
+    {{ HTML::script('/js/slick/slick.js') }}
     {{ HTML::script('/js/main.js') }}
     {{ HTML::script('/js/timeline.js') }}
-    {{ HTML::script('/js/slick/slick.js') }}
 <!-- Include JS file FROALA. -->
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.4/js/froala_editor.min.js'></script>
 

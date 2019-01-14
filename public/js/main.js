@@ -20,10 +20,6 @@ function fixedFooter() {
 }
 $(function() {
 
-  let mix = require('laravel-mix');
-
-  mix.js('node_modules/dist/trumbowyg.js');
-
   sameHeight($('.articles .card'));
   sameHeight($('.projects .card'));
   sameHeight($('.actus .actu.card'));

@@ -8,11 +8,13 @@
 
                 <div class="">
                     <div class="card actu valign-middle px-3">
-                        {{ HTML::image($actu->photo_1, $actu->title, array('class' => 'img-fluid')) }}
+                        @if(!empty($actu->photo_1))
+                            {{ HTML::image($actu->photo_1, $actu->title, array('class' => 'img-fluid')) }}
+                        @endif
 
                         <br>
                         <h2 class="text-center orange">{{ $actu->title }}</h2>
-                        {!! $actu->desc !!}
+                        {{ strlen($actu->desc) > 50 ? substr(strip_tags($actu->desc), 0, 50) . '...' : $actu->desc }}
                         <a href="{{ url('article/' . $actu->id) }}" class="btn btn-primary">En savoir +</a>
                     </div>
                 </div>

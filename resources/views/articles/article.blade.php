@@ -15,8 +15,9 @@
           <div class="desc"> {!!  $article->desc !!}</div>
 
         @else
+
           <div class="w-100 text-center">
-            {{ HTML::image($article->photo_2, '', array('class' => 'img-fluid mx-auto')) }}
+                {{ HTML::image($article->photo_2, '', array('class' => 'img-fluid mx-auto')) }}
           </div>
 
         @endif
@@ -29,7 +30,7 @@
         @else
           <div class="desc"> {!!  $article->desc !!}</div>
 
-        @endif
+    @endif
 
       </div>
       @else
@@ -57,6 +58,20 @@
         {{ HTML::script('/js/youtube.js') }}
       @endif
     </div>
+        @if(!empty($equipe))
+        <div class="equipe">
+            <h2 class="text-center">Les têtes de PIOSH</h2>
+            <div class="row">
+                @foreach($equipe as $item)
+                    <div class="col-12 col-md-6 col-xl-3">
+                        {{ HTML::image($item->photo, $item->nom, array('class' => 'img-fluid')) }}
+                        <h2 {{ !empty($item->color) ? 'style=color:' . $item->color  : "" }}>{{ $item->nom }}</h2>
+                        <div class="description">{!!  $item->description !!}</div>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        @endif
     @auth
       <div class="my-5">
         <a href="{{ url('admin/article/' . $article->id) }}">Modifier l'article</a>

@@ -1,12 +1,12 @@
 <html>
 <head>
     <meta charset="utf-8">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>PIOSH</title>
     {{ HTML::style('/css/main.css') }}
     {{ HTML::style('/css/timeline.css') }}
-    {{ HTML::style('/js/trumbowyg/dist/ui/trumbowyg.css') }}
+    {{ HTML::style('/js/trumbowyg/dist/ui/trumbowyg.min.css') }}
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Amatic+SC"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Helvetica"/>
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
           integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
@@ -111,9 +111,10 @@
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
         crossorigin="anonymous"></script>
 {{ HTML::script('/js/app.js') }}
-{{ HTML::script('/js/main.js') }}
+{{ HTML::script('/js/slick/slick.js') }}
 {{ HTML::script('/js/timeline.js') }}
-
+{{ HTML::script('/js/main.js') }}
+{{ HTML::script('https://cdn.jsdelivr.net/npm/trumbowyg@2.13.0/dist/trumbowyg.min.js') }}
 
 
 </body>
