@@ -14,7 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::name('articles')->group(function () {
     Route::get('articles', 'ArticlesController@index');
-    Route::get('article/{id}', 'ArticleController@index');
+    Route::get('article/{id}-{title}', 'ArticleController@index');
 });
 
 //ADMIN ARTICLES
@@ -44,5 +44,5 @@ Route::delete('admin/delete_equipe/{id}', 'AdminEquipeController@destroy')->midd
 Auth::routes();
 
 Route::get('/projets', 'ProjectsController@index');
-Route::get('/projet/{id}', 'ProjectController@index');
+Route::get('/projet/{id}-{title}', 'ProjectController@index');
 Route::get('/equipe', 'EquipeController@index');
