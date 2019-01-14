@@ -286,3 +286,9 @@ body .btn.btn-primary:hover {
   background-color: #d9411d;
   color: #fff !important;
 }
+
+body .projects .card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
