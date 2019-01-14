@@ -53,17 +53,8 @@
                             <a class="nav-link" href="{{ url('article/' .$article->id) . '-' . CUSTOM_SLUG($article->title) }}">{{ $article->title }}</a>
                         </li>
                         @endforeach
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Nos projets
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                @foreach( $projects as $project)
-                                    <a class="dropdown-item" href="{{ url('projet/' . $project->id) . '-' . CUSTOM_SLUG($project->title) }}">{{ $project->title }}</a>
-                                @endforeach
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="{{ url('projets') }}">Tous nos projets</a>
-                            </div>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ url('projets/')  }}">Nos projets</a>
                         </li>
 
                     </ul>
