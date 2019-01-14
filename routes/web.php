@@ -41,11 +41,8 @@ Route::get('admin/new_equipe', 'AdminEquipeController@create')->middleware('auth
 Route::post('admin/new_equipe', 'AdminEquipeController@store')->middleware('auth');
 Route::delete('admin/delete_equipe/{id}', 'AdminEquipeController@destroy')->middleware('auth');
 
-Route::get('/home', 'HomeController@index')->name('home');
-
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/projets', 'ProjectsController@index');
 Route::get('/projet/{id}', 'ProjectController@index');
+Route::get('/equipe', 'EquipeController@index');

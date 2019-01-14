@@ -16,8 +16,13 @@ class ArticleController extends Controller
 
     public function index($id)
     {
+        if($id === 2) {
+            $equipe = DB::table('articles')->where('catagory_id', 2)->get();
+        } else {
+            $equipe = array();
+        }
         $article = DB::table('articles')->where('id', $id)->first();
-        return view('articles.article', ['article' => $article]);
+        return view('articles.article', ['article' => $article, 'equipe' => $equipe]);
     }
 
     /**
