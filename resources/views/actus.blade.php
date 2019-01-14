@@ -1,6 +1,6 @@
 
 @if(!empty($actus))
-    <div class=" actus text-center">
+    <div class="py-5 actus text-center">
         <h2>Notre actualité</h2>
         <div class="container">
             <div class="row justify-content-center actus_slider">
@@ -14,7 +14,7 @@
 
                         <br>
                         <h2 class="text-center orange">{{ $actu->title }}</h2>
-                        {{ strlen($actu->desc) > 50 ? substr(strip_tags($actu->desc), 0, 50) . '...' : $actu->desc }}
+                        {{ CUSTOM_SUBSTR($actu->desc, 50, true, true, 'b') }}
                         <a href="{{ url('article/' . $actu->id) }}" class="btn btn-primary">En savoir +</a>
                     </div>
                 </div>

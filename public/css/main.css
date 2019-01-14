@@ -168,6 +168,10 @@ footer li {
   color: #6e1229 !important;
 }
 
+.bg-red {
+  background-color: #6e1229;
+}
+
 @media only screen and (min-width: 992px) {
   body .cd-timeline-img {
 
@@ -261,7 +265,7 @@ nav .navbar-nav .nav-item:hover .nav-link {
 }
 
 .white {
-  color: #fff;
+  color: #fff !important;
 }
 .black{
   color: #000;

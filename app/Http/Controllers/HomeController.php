@@ -24,6 +24,7 @@ class HomeController extends Controller
     {
         $timeline = DB::table('articles')->where('category_id', 2)->get();
         $actus = DB::table('articles')->where('category_id', 3)->get();
-        return view('home', ['timeline' => $timeline, 'actus' => $actus]);
+        $intro = DB::table('articles')->where('id', 1)->first();
+        return view('home', ['timeline' => $timeline, 'actus' => $actus, 'intro' => $intro]);
     }
 }
