@@ -18,7 +18,7 @@
                         <div class="px-3">
                             <h2 class="text-center orange">{{ $actu->title }}</h2>
                             {{ CUSTOM_SUBSTR($actu->desc, 50, true, true, 'b') }}
-                            <a href="{{ url('article/' . $actu->id . '-' . CUSTOM_SLUG($actu->title)) }}" class="btn btn-primary mb-3">En savoir +</a>
+                            <a href="{{ url('article/' . $actu->id . '-' . CUSTOM_SLUG($actu->title)) }}" class="d-block btn btn-primary mb-3">En savoir +</a>
                         </div>
                     </div>
                 </div>
