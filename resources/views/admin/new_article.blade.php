@@ -14,6 +14,10 @@
                 <input type="int" class="form-control" name="ordering" id="ordering" >
             </div>
             <div class="form-group">
+                <label for="intro">Intro de l'article</label>
+                <input type="text" class="form-control" name="intro" id="intro">
+            </div>
+            <div class="form-group">
                 <label for="desc">Description de l'article</label>
                 <textarea type="textarea" name="desc" id="desc" class="form-control"></textarea>
             </div>

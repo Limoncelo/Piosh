@@ -18,11 +18,14 @@ class AdminArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        $categories = DB::table('categories')->get();
-        $article = DB::table('articles')->where('id', $id)->first();
-        return view('admin.article', ['article' => $article, 'categories' => $categories]);
+        $articles = DB::table('articles')
+            ->select('articles.title as title', 'articles.intro as intro', 'articles.desc as desc', 'categories.title as catTitle', 'articles.id as id')
+            ->leftJoin('categories', 'articles.category_id', '=', 'categories.id')
+            ->get();
+
+        return view('admin.articles', ['articles' => $articles]);
     }
 
     /**
@@ -59,6 +62,7 @@ class AdminArticleController extends Controller
       } else {
         $article = new Article;
         $article->title = Input::get('title');
+        $article->intro = Input::get('intro');
         $article->desc = Input::get('desc');
         $article->category_id = Input::get('category_id');
         $article->color = Input::get('color');
@@ -96,7 +100,9 @@ class AdminArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $categories = DB::table('categories')->get();
+        $article = DB::table('articles')->where('id', $id)->first();
+        return view('admin.article', ['article' => $article, 'categories' => $categories]);
     }
 
     /**
@@ -120,6 +126,7 @@ class AdminArticleController extends Controller
     {
 
         $title = $request->title;
+        $intro = $request->intro;
         $desc = $request->desc;
         $color = $request->color;
         $id_category = $request->category_id;
@@ -154,6 +161,7 @@ class AdminArticleController extends Controller
             ->update(array(
                 'updated_at' => now(),
                 'title' => $title,
+                'intro' => $intro,
                 'desc' => $desc,
                 'color' => $color,
                 'photo_1' => $image_1,

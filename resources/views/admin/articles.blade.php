@@ -7,6 +7,7 @@
     <tr>
       <th>#</th>
       <th>Titre</th>
+      <th>Intro</th>
       <th>Description</th>
       <th>Catégorie</th>
     <th></th>
@@ -18,6 +19,7 @@
 
         <td>{{ $article->id }}</td>
         <td><a href="{{ url('admin/article/' . $article->id) }}">{{ $article->title }}</a></td>
+        <td>{{ str_limit(strip_tags($article->intro), 100, '...') }}</td>
         <td>{{ str_limit(strip_tags($article->desc), 100, '...') }}</td>
         <td>{{ $article->catTitle }}</td>
         <td>

@@ -18,10 +18,10 @@ class AdminEquipeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        $equipe = DB::table('equipes')->where('id', $id)->first();
-        return view('admin.equipe', ['equipe' => $equipe]);
+        $equipes = DB::table('equipes')->get();
+        return view('admin.equipes', ['equipes' => $equipes]);
     }
 
     /**
@@ -84,7 +84,9 @@ class AdminEquipeController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $equipe = DB::table('equipes')->where('id', $id)->first();
+        return view('admin.equipe', ['equipe' => $equipe]);
     }
 
     /**

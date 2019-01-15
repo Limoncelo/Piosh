@@ -18,10 +18,10 @@ class AdminCategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id)
+    public function index()
     {
-        $category = DB::table('categories')->where('id', $id)->first();
-        return view('admin.category', ['category' => $category]);
+        $categories = DB::table('categories')->get();
+        return view('admin.categories', ['categories' => $categories]);
     }
 
     /**
@@ -74,7 +74,9 @@ class AdminCategoryController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $category = DB::table('categories')->where('id', $id)->first();
+        return view('admin.category', ['category' => $category]);
     }
 
     /**
