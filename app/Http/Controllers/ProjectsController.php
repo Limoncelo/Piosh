@@ -15,7 +15,7 @@ class ProjectsController extends Controller
     {
 
         $all_projects = DB::table('articles')->where('category_id', 1)->orderBy('ordering', 'desc')->get();
-        return view('projects.projects', ['projectsList' => $all_projects]);
+        return view('projects.projects', ['all-projects' => $all_projects]);
     }
 
     /**
