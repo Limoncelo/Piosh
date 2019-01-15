@@ -290,7 +290,7 @@ body .btn.btn-primary:hover {
   color: #fff !important;
 }
 
-body .projects .card-body {
+body .projects .card-body, body .articles .card-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
