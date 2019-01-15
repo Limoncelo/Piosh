@@ -4,7 +4,7 @@
     <div class="container projects">
         <h1 class="text-center my-3">Tous nos projets</h1>
         <div class="row">
-            @foreach ($projects as $project)
+            @foreach ($all_projects as $project)
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="card project valign-middle my-3 text-center" id="art{{ $project->id }}">
                         @if(!empty($project->photo_1))
