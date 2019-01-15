@@ -87,7 +87,7 @@ body .slick-prev:before {
 }
 .card{
   width: 300px;
-  padding: 30px;
+  padding: 0px;
   font-weight: lighter;
   margin: 10px auto;
 }
