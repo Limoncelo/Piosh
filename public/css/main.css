@@ -294,3 +294,7 @@ body .projects .card-body {
 body .projects h2.card-title, body .articles h2.card-title {
   font-size: 1.5rem;
 }
+
+body .navbar li a.nav-link {
+  font-size: 20px;
+}
