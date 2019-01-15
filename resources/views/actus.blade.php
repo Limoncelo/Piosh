@@ -10,6 +10,8 @@
                     <div class="card actu valign-middle px-3">
                         @if(!empty($actu->photo_1))
                             {{ HTML::image($actu->photo_1, $actu->title, array('class' => 'img-fluid')) }}
+                        @elseif(!empty($actu->photo_2))
+                            <img class="card-img-top" src="{{ $actu->photo_2 }}" alt="{{ $actu->title }}">
                         @endif
 
                         <br>

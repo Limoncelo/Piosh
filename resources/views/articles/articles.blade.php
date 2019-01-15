@@ -9,6 +9,8 @@
       <div class="card article valign-middle my-3 text-center" id="art{{ $article->id }}">
         @if(!empty($article->photo_1))
           <img class="card-img-top" src="{{ $article->photo_1 }}" alt="{{ $article->title }}">
+        @elseif(!empty($article->photo_2))
+          <img class="card-img-top" src="{{ $article->photo_2 }}" alt="{{ $article->title }}">
         @endif
         <div class="card-body">
           <h2 class="card-title">{{ $article->title }}</h2>
