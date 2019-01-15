@@ -127,7 +127,7 @@ class AdminArticleController extends Controller
         $pos_photo = $request->pos_photo;
         $youtube = $request->youtube;
         $link = $request->link;
-
+        $ordering = $request->ordering;
         $photos = DB::table('articles')->select('photo_1', 'photo_2')->where('id', $id)->first();
         if(!empty($request->file('photo_1'))) {
             $image = $request->file('photo_1');
@@ -162,7 +162,8 @@ class AdminArticleController extends Controller
                 'category_id' => $id_category,
                 'pos_photo' => $pos_photo,
                 'youtube' => $youtube,
-                'link' => $link));
+                'link' => $link,
+                'ordering' => $ordering));
         return redirect()->action(
             'AdminArticleController@index', ['id' => $id]
         );
