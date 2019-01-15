@@ -70,7 +70,7 @@
                     </div>
                 @endforeach
             </div>
-            <p class="text-right">Illustrations réalisées par Justine Péronnet</p>
+            <p class="text-right">Illustrations réalisées par <a href="http://justineperonnet.ultra-book.com" class="orange" target="_blank">Justine Péronnet</a> <a href="https://www.instagram.com/justine.peronnet" target="_blank"><i class="black fab fa-instagram"></i></a></p>
         </div>
         @endif
     @auth
