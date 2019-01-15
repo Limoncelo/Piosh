@@ -7,7 +7,7 @@
                 @foreach($actus as $actu)
 
                 <div class="">
-                    <div class="card actu valign-middle px-3">
+                    <div class="card actu valign-middle p-0">
                         @if(!empty($actu->photo_1))
                             {{ HTML::image($actu->photo_1, $actu->title, array('class' => 'img-fluid')) }}
                         @elseif(!empty($actu->photo_2))
@@ -15,9 +15,11 @@
                         @endif
 
                         <br>
-                        <h2 class="text-center orange">{{ $actu->title }}</h2>
-                        {{ CUSTOM_SUBSTR($actu->desc, 50, true, true, 'b') }}
-                        <a href="{{ url('article/' . $actu->id . '-' . CUSTOM_SLUG($actu->title)) }}" class="btn btn-primary mb-3">En savoir +</a>
+                        <div class="px-3">
+                            <h2 class="text-center orange">{{ $actu->title }}</h2>
+                            {{ CUSTOM_SUBSTR($actu->desc, 50, true, true, 'b') }}
+                            <a href="{{ url('article/' . $actu->id . '-' . CUSTOM_SLUG($actu->title)) }}" class="btn btn-primary mb-3">En savoir +</a>
+                        </div>
                     </div>
                 </div>
                 @endforeach
