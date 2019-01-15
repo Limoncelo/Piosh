@@ -56,6 +56,12 @@
                         <li class="nav-item ">
                             <a class="nav-link" href="{{ url('projets/')  }}">Nos projets</a>
                         </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ url('articles/')  }}">Nos actualités</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="{{ url('partenaires/')  }}">Ils nous font confiance</a>
+                        </li>
 
                     </ul>
 
@@ -103,6 +109,7 @@
                     <a href="htpp://www.linkedin.com/company/piosh-lyon" target="_blank"><i class="fab fa-linkedin"></i>&nbsp;</a>
                 </li>
             </ul>
+            <p class="text-center white"><small>Site internet réalisé par Lina Maret</small></p>
         </div>
 
     </footer>

@@ -46,7 +46,15 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        //
+        $article = DB::table('articles')->where('id', $id)->first();
+
+
+        if($id == 2) {
+            $equipe = DB::table('equipes')->get();
+        } else {
+            $equipe = array();
+        }
+        return view('articles.article', ['article' => $article, 'equipe' => $equipe]);
     }
 
     /**

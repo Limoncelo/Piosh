@@ -14,8 +14,6 @@ class ProjectController extends Controller
     public function index($id)
     {
 
-        $project = DB::table('articles')->where('id', $id)->first();
-        return view('projects.project', ['project' => $project]);
     }
 
     /**

@@ -3,10 +3,10 @@
 
   <div class="container article my-4">
     @if(empty($article->color))
-      <h1 class="my-4 text-center">{{ $article->title }}</h1>
+      <h1 class="my-5 text-center">{{ $article->title }}</h1>
     @else
 
-      <h1 style="color:{{ $article->color }}" class="my-4 text-center">{{ $article->title }}</h1>
+      <h1 style="color:{{ $article->color }}" class="my-5 text-center">{{ $article->title }}</h1>
     @endif
     <div class="row">
     @if(!empty($article->photo_2))
@@ -70,6 +70,7 @@
                     </div>
                 @endforeach
             </div>
+            <p class="text-right">Illustrations réalisées par Justine Péronnet</p>
         </div>
         @endif
     @auth

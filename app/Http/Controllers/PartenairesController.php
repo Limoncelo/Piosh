@@ -3,29 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-use DB;
-
-class ArticleController extends Controller
+class PartenairesController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-
-    public function index($id)
+    public function index()
     {
-
-        $article = DB::table('articles')->where('id', $id)->first();
-
-
-        if($id == 2) {
-            $equipe = DB::table('equipes')->get();
-        } else {
-            $equipe = array();
-        }
-        return view('articles.article', ['article' => $article, 'equipe' => $equipe]);
+        $partenaires = DB::table('articles')->where('category_id', 6)->get();
+        return view('partenaires.partenaires', ['partenaires' => $partenaires]);
     }
 
     /**

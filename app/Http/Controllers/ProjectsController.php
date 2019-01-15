@@ -47,7 +47,9 @@ class ProjectsController extends Controller
      */
     public function show($id)
     {
-        //
+
+        $project = DB::table('articles')->where('id', $id)->first();
+        return view('projects.project', ['project' => $project]);
     }
 
     /**

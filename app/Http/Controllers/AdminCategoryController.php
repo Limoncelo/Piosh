@@ -118,6 +118,7 @@ class AdminCategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('categories')->where('id', $id)->delete();
+        return Redirect::to('/admin/categories');
     }
 }

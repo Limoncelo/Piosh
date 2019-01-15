@@ -54,7 +54,7 @@ $(function() {
     $('.actus .actus_slider').slick({
         arrows: true,
         dots: false,
-        infinite: true,
+        infinite: false,
         speed: 200,
         accessibility: true,
         autoplay: false,

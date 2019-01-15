@@ -7,12 +7,19 @@ html body{
 
 }
 
-h1{
-  color: white;
-  font-weight: lighter;
-  font-size: 200px;
+body h1{
+  color: #6e1229;
 }
 
+body h2 {
+  color: #d9411d;
+}
+body h3 {
+  color: #6e1229;
+}
+body h4 {
+  color: #d9411d;
+}
 b {
   color: white;
   font-size: 17px;
@@ -28,14 +35,6 @@ body .btn {
 c {
   color: white;
   font-size: 40px;
-}
-
-h2 {
-  color: black;
-  font-weight: 600;
-  font-size: 20px;
-}
-a {
 }
 a:hover {
   text-decoration: none;
@@ -96,7 +95,6 @@ body .slick-prev:before {
   padding: 50px 0;
 }
 ul {
-  list-style-type: none;
   padding: 0;
 }
 
@@ -291,4 +289,8 @@ body .projects .card-body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+body .projects h2.card-title, body .articles h2.card-title {
+  font-size: 1.5rem;
 }

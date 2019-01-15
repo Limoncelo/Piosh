@@ -7,11 +7,11 @@
     </div>
     <div class="py-3 bg-red">
         <div class="container">
-            <p><a href="#contact" class="white contact-anchor text-center black d-block my-5">Pour en savoir plus, contactez-nous !</a></p>
             <div class="intro text-center white">
                 {!! $intro->desc !!}
 
             </div>
+            <p><a href="#contact" class="white contact-anchor text-center black d-block my-5">Pour en savoir plus, contactez-nous !</a></p>
         </div>
     </div>
     <div class="">

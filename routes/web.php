@@ -14,7 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::name('articles')->group(function () {
     Route::get('articles', 'ArticlesController@index');
-    Route::get('article/{id}-{title}', 'ArticleController@index');
+    Route::get('article/{id}-{title}', 'ArticlesController@show');
 });
 
 //ADMIN ARTICLES
@@ -31,7 +31,7 @@ Route::get('admin/category/{id}', 'AdminCategoryController@index')->middleware('
 Route::post('admin/category/{id}', 'AdminCategoryController@update')->middleware('auth');
 Route::get('admin/new_category', 'AdminCategoryController@create')->middleware('auth');
 Route::post('admin/new_category', 'AdminCategoryController@store')->middleware('auth');
-Route::delete('admin/delete_category/{id}', "AdminCategoryController@destroy")->middleware('auth');
+Route::get('admin/delete_category/{id}', "AdminCategoryController@destroy")->middleware('auth');
 
 //ADMIN EQUIPE
 Route::get('admin/equipes', 'AdminEquipesController@index')->middleware('auth');
@@ -44,5 +44,6 @@ Route::delete('admin/delete_equipe/{id}', 'AdminEquipeController@destroy')->midd
 Auth::routes();
 
 Route::get('/projets', 'ProjectsController@index');
-Route::get('/projet/{id}-{title}', 'ProjectController@index');
+Route::get('/projet/{id}-{title}', 'ProjectsController@show');
 Route::get('/equipe', 'EquipeController@index');
+Route::get('/partenaires', 'PartenairesController@index');
