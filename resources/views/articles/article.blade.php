@@ -35,7 +35,7 @@
       </div>
       @else
       <div class="col-12">
-        <div class="desc w-100 text-center">{!! $article->desc !!}</div>
+        <div class="desc w-100">{!! $article->desc !!}</div>
       </div>
       @endif
       @if(!empty($article->link))
