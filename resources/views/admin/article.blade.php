@@ -9,6 +9,14 @@
 
     {{ Form::open(array('url' => 'admin/article/' . $article->id, 'class' => 'w-100', 'files' => true)) }}
     <div class="form-group">
+        <label for="id">#</label>
+        <input type="int" class="form-control" value="{{ $article->id }}" name="id" id="id" disabled>
+    </div>
+    <div class="form-group">
+        <label for="ordering">Ordering</label>
+        <input type="int" class="form-control" value="{{ $article->ordering }}" name="ordering" id="ordering" >
+    </div>
+    <div class="form-group">
         <label for="title">Titre de l'article</label>
         <input type="text" class="form-control" value="{{ $article->title }}" name="title" id="title">
     </div>

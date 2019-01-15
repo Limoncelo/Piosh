@@ -79,6 +79,7 @@ class AdminArticleController extends Controller
         $article->pos_photo = Input::get('pos_photo');
         $article->youtube = Input::get('youtube');
         $article->link = Input::get('link');
+        $article->ordering = Input::get('ordering');
 
         $article->created_at = now();
         $article->save();

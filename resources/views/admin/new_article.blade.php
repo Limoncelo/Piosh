@@ -10,6 +10,10 @@
                 <input type="text" class="form-control"  name="title" id="title">
             </div>
             <div class="form-group">
+                <label for="ordering">Ordering</label>
+                <input type="int" class="form-control" name="ordering" id="ordering" >
+            </div>
+            <div class="form-group">
                 <label for="desc">Description de l'article</label>
                 <textarea type="textarea" name="desc" id="desc" class="form-control"></textarea>
             </div>
