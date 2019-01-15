@@ -13,7 +13,7 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-      $articles = DB::table('articles')->where('category_id', 3)->get();
+      $articles = DB::table('articles')->where('category_id', 3)->orderBy('ordering', 'desc')->get();
       return view('articles.articles', ['articles' => $articles]);
     }
 

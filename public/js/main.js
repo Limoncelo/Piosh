@@ -20,8 +20,8 @@ function fixedFooter() {
 }
 $(function() {
 
-  sameHeight($('.articles .card'));
-  sameHeight($('.projects .card'));
+  // sameHeight($('.articles .card'));
+  // sameHeight($('.projects .card'));
   sameHeight($('.actus .actu.card'));
   fixedFooter();
   window.sr = ScrollReveal();
