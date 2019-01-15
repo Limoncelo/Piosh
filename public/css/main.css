@@ -157,7 +157,11 @@ footer li {
   margin-top: 8px;
   color: #fff;
 }
-
+.bg-cover {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .orange {
   color: #d9411d !important;
 }

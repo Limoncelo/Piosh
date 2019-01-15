@@ -9,30 +9,7 @@
                 <a href="mailto:contact@piosh.fr">contact@piosh.fr</a></p>
         </div>
         <div class="col-sm-12 col-md-6 col-lg-6 p-0">
-            <div id="map-canvas" class="w-100" style="height: 500px;"></div>
+            <div class="w-100 bg-cover" style="height: 500px; background-image: url('{{ URL::asset('img/maps.png') }}')"></div>
         </div>
     </div>
 </div>
-
-<script>
-
-    var map;
-    function initMap() {
-        var myLatLng = {lat: 45.708602, lng: 4.860644};
-        map = new google.maps.Map(document.getElementById('map-canvas'), {
-            center: myLatLng,
-            zoom: 3
-        });
-        var marker = new google.maps.Marker({
-            position: myLatLng,
-            map: map,
-            title: 'Coopérative d’activités Escale Creation'
-        });
-    }
-    // var lat = 45.708602;
-    // var lng = 4.860644;
-
-
-</script>
-<script src="https://maps.googleapis.com/maps/api/js?libraries=places,geometry&region=fr&key=AIzaSyDM49KLcIEocaA_OqSk5o2-Nl0V0syWWEs&callback=initMap"
-        async defer></script>
