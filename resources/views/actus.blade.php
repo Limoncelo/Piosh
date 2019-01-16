@@ -7,7 +7,7 @@
                 @foreach($actus as $actu)
 
                 <div class="">
-                    <div class="card actu p-0">
+                    <div class="card actu justify-content-center p-0">
                         @if(!empty($actu->photo_1))
                             {{ HTML::image($actu->photo_1, $actu->title, array('class' => 'img-fluid')) }}
                         @elseif(!empty($actu->photo_2))
