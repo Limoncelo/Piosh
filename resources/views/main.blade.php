@@ -49,9 +49,11 @@
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         @foreach($menu as $article)
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('article/' .$article->id) . '-' . CUSTOM_SLUG($article->title) }}">{{ $article->title }}</a>
-                        </li>
+                            @if($article->id != 5)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('article/' .$article->id) . '-' . CUSTOM_SLUG($article->title) }}">{{ $article->title }}</a>
+                                </li>
+                            @endif
                         @endforeach
                         <li class="nav-item ">
                             <a class="nav-link" href="{{ url('projets/')  }}">Nos projets</a>
@@ -59,6 +61,15 @@
                         <li class="nav-item ">
                             <a class="nav-link" href="{{ url('articles/')  }}">Nos actualités</a>
                         </li>
+
+                        @foreach($menu as $article)
+                            @if($article->id == 5)
+                                <li class="nav-item">
+                                    <a class="nav-link" href="{{ url('article/' .$article->id) . '-' . CUSTOM_SLUG($article->title) }}">{{ $article->title }}</a>
+                                </li>
+                            @endif
+                        @endforeach
+
                         <li class="nav-item ">
                             <a class="nav-link" href="{{ url('partenaires/')  }}">Ils nous font confiance</a>
                         </li>
