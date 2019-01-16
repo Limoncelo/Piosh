@@ -3,6 +3,7 @@
     <meta charset="utf-8">
     <title>PIOSH</title>
     <meta name="description" content="PIOSH - Cabinet de Recherche-Action">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{ HTML::style('/css/app.css') }}
     {{ HTML::style('/css/main.css') }}
     {{ HTML::style('/css/timeline.css') }}
