@@ -297,9 +297,29 @@ body .projects .card-body, body .articles .card-body {
 }
 
 body .projects h2.card-title, body .articles h2.card-title {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
 }
 
 body .navbar li a.nav-link {
   font-size: 20px;
+}
+
+.mod_cookie_bar {
+  padding: 0;
+}
+
+.mod_cookie_bar .cookie_bar {
+  display: flex;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 7px 20px;
+  color: #666;
+  background-color: #f2f2f2;
+  font-size: 0.9em;
+}
+
+.mod_cookie_bar a:hover {
+  text-decoration: none;
 }

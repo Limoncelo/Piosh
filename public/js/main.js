@@ -18,7 +18,34 @@ function fixedFooter() {
         $('footer').addClass('fixedBottom w-100');
     }
 }
+
 $(function() {
+
+
+
+    $('.btn-danger').on('click', function() {
+        alert('Êtes vous certain.e ? ');
+    });
+
+    if ($.cookie('cookie_bar') === undefined) {
+        var cookieBar =
+            '<div class="mod_cookie_bar"><div class="text-center text-xl-left cookie_bar justify-content-center flex-row align-items-center p-2" id="cookie_bar">\n' +
+            'En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de cookies.\n' +
+            '<a class="m-1 btn btn-primary btn-sm"  target="_blank" href="https://support.google.com/analytics/topic/2919631?hl=fr&ref_topic=1008008">En savoir plus</a>\n' +
+            '<div class="m-1 cookie_btn btn btn-primary btn-sm" id="cookie_accept">Ok</div>';
+        cookieBar +=
+            '</div></div>';
+
+        $('body').append(cookieBar);
+
+        // Masquer la barre
+        $('body').on('click', '#cookie_accept', function (e) {
+            e.preventDefault();
+            $('#cookie_bar').fadeOut();
+            $.cookie('cookie_bar', "viewed", {expires: 30 * 12});
+        });
+
+    }
 
   sameHeight($('.articles .card'));
   sameHeight($('.projects .card'));
@@ -32,7 +59,7 @@ $(function() {
         origin: 'left',
         distance: '1500px',
         opacity: 0.9,
-        mobile: false,
+        mobile: true,
         reset: false
   };
 
@@ -42,7 +69,7 @@ $(function() {
         origin: 'right',
         distance: '1500px',
         opacity: 0.9,
-        mobile: false,
+        mobile: true,
         reset: false
   };
 

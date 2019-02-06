@@ -1,12 +1,12 @@
 
 @if(!empty($actus))
     <div class="py-5 actus text-center">
-        <h2>Notre actualité</h2>
+        <h2>Nos actualités</h2>
         <div class="container">
             <div class="row justify-content-center actus_slider">
                 @foreach($actus as $actu)
 
-                <div class="">
+                <div class="px-2">
                     <div class="card actu justify-content-center p-0">
                         @if(!empty($actu->photo_1))
                             {{ HTML::image($actu->photo_1, $actu->title, array('class' => 'img-fluid')) }}

@@ -82,7 +82,7 @@ class AdminArticleController extends Controller
         $article->pos_photo = Input::get('pos_photo');
         $article->youtube = Input::get('youtube');
         $article->link = Input::get('link');
-        $article->ordering = Input::get('ordering');
+        $article->ordering = empty(Input::get('ordering')) ? 0 : Input::get('ordering');
 
         $article->created_at = now();
         $article->save();
@@ -133,7 +133,7 @@ class AdminArticleController extends Controller
         $pos_photo = $request->pos_photo;
         $youtube = $request->youtube;
         $link = $request->link;
-        $ordering = $request->ordering;
+        $ordering = empty($request->ordering) ? 0 : $request->ordering;
         $photos = DB::table('articles')->select('photo_1', 'photo_2')->where('id', $id)->first();
         if(!empty($request->file('photo_1'))) {
             $image = $request->file('photo_1');

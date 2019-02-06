@@ -87,14 +87,8 @@
             </div>
 
         {{ Form::close() }}
-<script>
 
 
-        $(function() {
-            $('textarea').trumbowyg();
-
-        });
-</script>
         </div>
     </div>
 

@@ -2,7 +2,7 @@
 @section('content')
 
     <div class="container partenaires">
-        <h1 class="text-center my-5">Ils nous font confiance</h1>
+        <h1 class="text-center my-5">On nous fait confiance</h1>
         <div class="row">
             @foreach ($partenaires as $partenaire)
                 <div class="col-12 col-sm-6 col-lg-4">
@@ -12,6 +12,7 @@
                         @endif
                         <div class="card-body">
                             <h2 class="card-title">{{ $partenaire->title }}</h2>
+                            <p>{{ $partenaire->intro }}</p>
 
                         </div>
                     </div>

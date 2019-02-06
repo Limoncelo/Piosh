@@ -49,30 +49,42 @@
 
                 <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                     <ul class="navbar-nav">
-                        @foreach($menu as $article)
-                            @if($article->id != 5)
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('article/' .$article->id) . '-' . CUSTOM_SLUG($article->title) }}">{{ $article->title }}</a>
-                                </li>
-                            @endif
-                        @endforeach
-                        <li class="nav-item ">
-                            <a class="nav-link" href="{{ url('projets/')  }}">Nos projets</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Qui sommes-nous ?
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @foreach($menu as $article)
+                                    @if($article->id != 5)
+                                            <a class="dropdown-item" href="{{ url('article/' .$article->id) . '-' . CUSTOM_SLUG($article->title) }}">{{ $article->title }}</a>
+                                    @endif
+                                @endforeach
+                            </div>
                         </li>
-                        <li class="nav-item ">
-                            <a class="nav-link" href="{{ url('articles/')  }}">Nos actualités</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Nos projets
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                                <a class="dropdown-item" href="{{ url('projets/')  }}">Nos projets</a>
+                                <a class="dropdown-item" href="{{ url('partenaires/')  }}">Ils nous font confiance</a>
+
+                            </div>
                         </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Pour aller plus loin
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
 
-                        @foreach($menu as $article)
-                            @if($article->id == 5)
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ url('article/' .$article->id) . '-' . CUSTOM_SLUG($article->title) }}">{{ $article->title }}</a>
-                                </li>
-                            @endif
-                        @endforeach
+                                <a class="dropdown-item" href="{{ url('articles/')  }}">Nos actualités</a>
 
-                        <li class="nav-item ">
-                            <a class="nav-link" href="{{ url('partenaires/')  }}">Ils nous font confiance</a>
+                                @foreach($menu as $article)
+                                    @if($article->id == 5)
+                                            <a class="dropdown-item" href="{{ url('article/' .$article->id) . '-' . CUSTOM_SLUG($article->title) }}">{{ $article->title }}</a>
+                                    @endif
+                                @endforeach
+                            </div>
                         </li>
 
                     </ul>
@@ -118,7 +130,7 @@
                     <a href="http://www.twitter.com/PIOSH_Lyon" target="_blank"><i class="fab fa-twitter"></i>&nbsp;</a>
                 </li>
                 <li>
-                    <a href="htpp://www.linkedin.com/company/piosh-lyon" target="_blank"><i class="fab fa-linkedin"></i>&nbsp;</a>
+                    <a href="http://www.linkedin.com/company/piosh-lyon" target="_blank"><i class="fab fa-linkedin"></i>&nbsp;</a>
                 </li>
             </ul>
             <p class="text-center white"><small>Site internet réalisé par Lina Maret</small></p>
@@ -135,6 +147,7 @@
     {{ HTML::script('/js/slick/slick.js') }}
     {{ HTML::script('/js/main.js') }}
     {{ HTML::script('/js/timeline.js') }}
+    {{ HTML::script('/js/jquery.cookie.js') }}
 <!-- Include JS file FROALA. -->
 <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/froala-editor/2.8.4/js/froala_editor.min.js'></script>
 
