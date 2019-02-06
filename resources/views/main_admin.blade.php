@@ -4,7 +4,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>PIOSH</title>
     {{ HTML::style('/css/main.css') }}
-    {{ HTML::style('/js/Trumbowyg-master/dist/ui/trumbowyg.css') }}
+    {{ HTML::style('/js/Trumbowyg-master/src/ui/trumbowyg.css') }}
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Amatic+SC"/>
     <!-- FONT AWESOME -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
