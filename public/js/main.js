@@ -51,6 +51,10 @@ $(function() {
   sameHeight($('.projects .card'));
   sameHeight($('.actus .actu.card'));
   fixedFooter();
+    
+    $( window ).resize(function() {
+      fixedFooter();
+    });
   window.sr = ScrollReveal();
 
   var configRight = {
