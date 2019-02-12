@@ -29,7 +29,7 @@
                 {{ csrf_field() }}
                 {{ method_field('DELETE') }}
                 <div class="form-group">
-                    <button type="submit" class="btn btn-danger">Supprimer cet article</button>
+                    <button type="submit"  class="btn btn-danger">Supprimer cet article</button>
                 </div>
 
             {{ Form::close() }}

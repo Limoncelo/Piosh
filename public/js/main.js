@@ -23,8 +23,9 @@ $(function() {
 
 
 
-    $('.btn-danger').on('click', function() {
-        confirm('Êtes vous certain.e ? ');
+    $('.btn-danger').on('click', function(e) {
+        e.preventDefault();
+        return confirm('Êtes vous certain.e ? ');
     });
 
     if ($.cookie('cookie_bar') === undefined) {
