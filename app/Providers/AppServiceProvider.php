@@ -28,6 +28,12 @@ class AppServiceProvider extends ServiceProvider
             $menu = DB::table('articles')->where('category_id', 4)->get();
             View::share('projects', $projects);
             View::share('menu', $menu);
+
+            $mentions_legales = DB::table('articles')
+                ->where('id', 9)
+                ->first();
+
+            View::share('mentions_legales', $mentions_legales);
         }
     }
 

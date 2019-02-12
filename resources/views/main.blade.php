@@ -67,7 +67,7 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
                                 <a class="dropdown-item" href="{{ url('projets/')  }}">Nos projets</a>
-                                <a class="dropdown-item" href="{{ url('partenaires/')  }}">Ils nous font confiance</a>
+                                <a class="dropdown-item" href="{{ url('partenaires/')  }}">On nous fait confiance</a>
 
                             </div>
                         </li>
@@ -133,6 +133,7 @@
                     <a href="http://www.linkedin.com/company/piosh-lyon" target="_blank"><i class="fab fa-linkedin"></i>&nbsp;</a>
                 </li>
             </ul>
+            <p class="text-center white"><a class="text-center white" target="_blank" href="{{ url('article/' .$mentions_legales->id) . '-' . CUSTOM_SLUG($mentions_legales->title) }}">{{$mentions_legales->title}}</a> </p>
             <p class="text-center white"><small>Site internet réalisé par Lina Maret</small></p>
         </div>
 

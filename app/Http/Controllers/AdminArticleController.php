@@ -23,6 +23,7 @@ class AdminArticleController extends Controller
         $articles = DB::table('articles')
             ->select('articles.title as title', 'articles.intro as intro', 'articles.desc as desc', 'categories.title as catTitle', 'articles.id as id')
             ->leftJoin('categories', 'articles.category_id', '=', 'categories.id')
+            ->orderBy('id', 'desc')
             ->get();
 
         return view('admin.articles', ['articles' => $articles]);

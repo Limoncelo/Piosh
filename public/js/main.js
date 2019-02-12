@@ -24,7 +24,7 @@ $(function() {
 
 
     $('.btn-danger').on('click', function() {
-        alert('Êtes vous certain.e ? ');
+        confirm('Êtes vous certain.e ? ');
     });
 
     if ($.cookie('cookie_bar') === undefined) {
