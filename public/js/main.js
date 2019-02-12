@@ -25,7 +25,9 @@ $(function() {
 
     $('.btn-danger').on('click', function(e) {
         e.preventDefault();
-        return confirm('Êtes vous certain.e ? ');
+        if(confirm('Êtes vous certain.e ? ')) {
+            $(this).closest('.validate-form').submit();
+        }
     });
 
     if ($.cookie('cookie_bar') === undefined) {

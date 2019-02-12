@@ -78,7 +78,7 @@
 {{ Form::close() }}
 
         <br><br>
-        {{ Form::open(array('url' => 'admin/delete_article/' . $article->id, 'class' => 'w-100')) }}
+        {{ Form::open(array('url' => 'admin/delete_article/' . $article->id, 'class' => 'w-100 validate-form')) }}
 
             {{ csrf_field() }}
             {{ method_field('DELETE') }}
