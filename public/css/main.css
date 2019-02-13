@@ -323,3 +323,8 @@ body .navbar li a.nav-link {
 .mod_cookie_bar a:hover {
   text-decoration: none;
 }
+
+
+#accordion .btn {
+  background-color: transparent;
+}
