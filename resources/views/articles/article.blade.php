@@ -4,23 +4,24 @@
   <div class="container article my-4">
     @if(empty($article->color))
       <h1 class="my-5 text-center">{{ $article->title }}</h1>
+      @if(!empty($article->intro))
+          <div class="intro"> {!!  $article->intro !!}</div>
+      @endif
     @else
-
       <h1 style="color:{{ $article->color }}" class="my-5 text-center">{{ $article->title }}</h1>
+      @if(!empty($article->intro))
+          <div class="intro"> {!!  $article->intro !!}</div>
+      @endif
     @endif
     <div class="row">
     @if(!empty($article->photo_2))
       <div class="col-12 col-md-6 flex-column valign-middle">
         @if($article->pos_photo === 'droite')
-            <div class="intro"> {!!  $article->intro !!}</div>
             <div class="desc"> {!!  $article->desc !!}</div>
-
         @else
-
           <div class="w-100 text-center">
                 {{ HTML::image($article->photo_2, '', array('class' => 'img-fluid mx-auto')) }}
           </div>
-
         @endif
       </div>
       <div class="col-12 col-md-6 flex-column valign-middle">
@@ -29,15 +30,11 @@
             {{ HTML::image($article->photo_2, '', array('class' => 'img-fluid mx-auto')) }}
           </div>
         @else
-            <div class="intro"> {!!  $article->intro !!}</div>
             <div class="desc"> {!!  $article->desc !!}</div>
-
         @endif
-
       </div>
       @else
       <div class="col-12">
-        <div class="intro"> {!!  $article->intro !!}</div>
         <div class="desc w-100">{!! $article->desc !!}</div>
       </div>
       @endif

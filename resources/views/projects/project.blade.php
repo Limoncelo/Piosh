@@ -4,22 +4,24 @@
     <div class="container article my-4">
         @if(empty($project->color))
             <h1 class="my-4 text-center">{{ $project->title }}</h1>
+            @if(!empty($project->intro))
+                <div class="intro"> {!!  $project->intro !!}</div>
+            @endif
         @else
-
             <h1 style="color:{{ $project->color }}" class="my-4 text-center">{{ $project->title }}</h1>
+            @if(!empty($project->intro))
+                <div class="intro"> {!!  $project->intro !!}</div>
+            @endif
         @endif
         <div class="row">
             @if(!empty($project->photo_2))
                 <div class="col-12 col-md-6 flex-column valign-middle">
                     @if($project->pos_photo === 'droite')
-                        <div class="intro"> {!!  $project->intro !!}</div>
                         <div class="desc"> {!!  $project->desc !!}</div>
-
                     @else
                         <div class="w-100 text-center">
                             {{ HTML::image($project->photo_2, '', array('class' => 'img-fluid mx-auto')) }}
                         </div>
-
                     @endif
                 </div>
                 <div class="col-12 col-md-6 flex-column valign-middle">
@@ -28,15 +30,12 @@
                             {{ HTML::image($project->photo_2, '', array('class' => 'img-fluid mx-auto')) }}
                         </div>
                     @else
-                        <div class="intro"> {!!  $project->intro !!}</div>
                         <div class="desc"> {!!  $project->desc !!}</div>
-
                     @endif
 
                 </div>
             @else
                 <div class="col-12">
-                    <div class="intro"> {!!  $project->intro !!}</div>
                     <div class="desc">{!! $project->desc !!}</div>
                 </div>
             @endif
@@ -48,7 +47,6 @@
             @if(!empty($project->youtube))
                 <div class="col-12 text-center">
                     <div class="containImageVideo">
-
                         <div class="wrapper">
                             <div class="youtube" data-embed="{{ $project->youtube }}">
                                 <div class="play-button"></div>
@@ -56,7 +54,6 @@
                         </div>
                     </div>
                 </div>
-
                 {{ HTML::script('/js/youtube.js') }}
             @endif
         </div>
@@ -66,5 +63,4 @@
             </div>
         @endauth
     </div>
-
 @endsection

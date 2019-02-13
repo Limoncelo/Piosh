@@ -339,7 +339,9 @@ nav a:active {
   background-color: transparent !important;
 }
 
-body .intro {
+body .article .intro, body .projet .intro {
   color: #d9411d;
   font-style: italic;
+  text-align: center;
+  padding: 0;
 }
