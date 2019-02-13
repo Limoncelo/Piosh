@@ -7,6 +7,9 @@ html body{
 
 }
 
+body a {
+  color: #d9411d;
+}
 body h1{
   color: #6e1229;
 }
@@ -285,11 +288,14 @@ body .btn.btn-primary {
   transition : all 0.2s;
 }
 
-body .btn.btn-primary:hover {
-  background-color: #d9411d;
+body .btn.btn-primary:hover, body .btn.btn-primary:active {
+  background-color: #d9411d !important;
   color: #fff !important;
+  border-color: transparent !important;
 }
-
+body .btn.btn-primary:focus{
+  box-shadow: 0 0 0 0.2rem rgba(217,65,29,.5)
+}
 body .projects .card-body, body .articles .card-body {
   display: flex;
   flex-direction: column;
@@ -331,4 +337,9 @@ body .navbar li a.nav-link {
 
 nav a:active {
   background-color: transparent !important;
+}
+
+body .intro {
+  color: #d9411d;
+  font-style: italic;
 }
