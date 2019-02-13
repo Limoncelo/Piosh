@@ -329,6 +329,6 @@ body .navbar li a.nav-link {
   background-color: transparent;
 }
 
-a:active {
+nav a:active {
   background-color: transparent !important;
 }
