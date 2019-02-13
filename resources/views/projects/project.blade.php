@@ -10,7 +10,7 @@
         @endif
         <div class="row">
             @if(!empty($project->photo_2))
-                <div class="col-12 col-md-6 valign-middle">
+                <div class="col-12 col-md-6 flex-column valign-middle">
                     @if($project->pos_photo === 'droite')
                         <div class="intro"> {!!  $project->intro !!}</div>
                         <div class="desc"> {!!  $project->desc !!}</div>
@@ -22,7 +22,7 @@
 
                     @endif
                 </div>
-                <div class="col-12 col-md-6  valign-middle">
+                <div class="col-12 col-md-6 flex-column valign-middle">
                     @if($project->pos_photo === 'droite')
                         <div class="w-100 text-center">
                             {{ HTML::image($project->photo_2, '', array('class' => 'img-fluid mx-auto')) }}
