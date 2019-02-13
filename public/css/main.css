@@ -328,3 +328,7 @@ body .navbar li a.nav-link {
 #accordion .btn {
   background-color: transparent;
 }
+
+a:active {
+  background-color: transparent !important;
+}
