@@ -21,15 +21,6 @@ function fixedFooter() {
 
 $(function() {
 
-
-
-    $('.btn-danger').on('click', function(e) {
-        e.preventDefault();
-        if(confirm('Êtes vous certain.e ? ')) {
-            $(this).closest('.validate-form').submit();
-        }
-    });
-
     if ($.cookie('cookie_bar') === undefined) {
         var cookieBar =
             '<div class="mod_cookie_bar"><div class="text-center text-xl-left cookie_bar justify-content-center flex-row align-items-center p-2" id="cookie_bar">\n' +

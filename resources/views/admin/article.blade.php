@@ -18,7 +18,7 @@
     </div>
     <div class="form-group">
         <label for="title">Titre de l'article</label>
-        <input type="text" class="form-control" value="{{ $article->title }}" name="title" id="title">
+        <input type="text" class="form-control" value="{{ $article->title }}" name="title" id="title" required>
     </div>
     <div class="form-group">
         <label for="intro">Intro de l'article</label>
@@ -30,7 +30,7 @@
     </div>
     <div class="form-group">
         <label for="category_id">Catégorie</label>
-        <select id="category_id" name="category_id" class="form-control">
+        <select id="category_id" name="category_id" class="form-control" required>
             <option  disabled value="0">Choisir une catégorie</option>
             @foreach($categories as $category)
                 @if($category->id === $article->category_id)

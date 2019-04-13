@@ -7,11 +7,11 @@
     {{ Form::open(array('url' => 'admin/equipe/' . $equipe->id, 'class' => 'w-100', 'files' => true)) }}
     <div class="form-group">
         <label for="nom">Nom</label>
-        <input type="text" class="form-control" value="{{ $equipe->nom }}" name="nom" id="nom">
+        <input type="text" class="form-control" value="{{ $equipe->nom }}" name="nom" id="nom" required>
     </div>
     <div class="form-group">
         <label for="description">Description </label>
-        <textarea type="textarea" name="description" id="description" class="form-control">{{ $equipe->description }}</textarea>
+        <textarea type="textarea" name="description" id="description" class="form-control" required>{{ $equipe->description }}</textarea>
     </div>
     <div class="form-group">
         <label for="color">Couleur</label>

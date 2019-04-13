@@ -24,18 +24,42 @@
         <td>{{ $article->catTitle }}</td>
         <td>
 
-            {{ Form::open(array('url' => 'admin/delete_article/' . $article->id, 'class' => 'w-100', 'class' => 'validate-form')) }}
-
-                {{ csrf_field() }}
-                {{ method_field('DELETE') }}
-                <div class="form-group">
-                    <button type="submit"  class="btn btn-danger">Supprimer cet article</button>
-                </div>
-
-            {{ Form::close() }}
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                Supprimer l'article
+            </button>
         </td>
 
     </tr>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Supprimer l'article</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body text-center">
+
+                    {{ Form::open(array('url' => 'admin/delete_article/' . $article->id, 'class' => 'w-100', 'class' => 'validate-form')) }}
+
+                    {{ csrf_field() }}
+                    {{ method_field('DELETE') }}
+                    <div class="form-group">
+                        <button type="submit"  class="btn btn-danger">Supprimer cet article</button>
+                    </div>
+
+                    {{ Form::close() }}
+                </div>
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+    </div>
   @endforeach
 
     </tbody>

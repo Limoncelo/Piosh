@@ -52,6 +52,7 @@ class AdminArticleController extends Controller
             // validate
       $rules = array(
         'title' => 'required',
+        'category_id' => 'required'
 
       );
 

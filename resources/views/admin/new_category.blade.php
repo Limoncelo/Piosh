@@ -7,7 +7,7 @@
 {{ Form::open(array('url' => 'admin/new_category', 'class' => 'w-100', 'files' => true)) }}
             <div class="form-group">
                 <label for="title">Titre de la categorie</label>
-                <input type="text" class="form-control"  name="title" id="title">
+                <input type="text" class="form-control"  name="title" id="title" required>
             </div>
             <br>
     <input type="submit" class=" btn btn-primary">

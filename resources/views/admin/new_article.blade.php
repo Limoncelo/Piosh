@@ -4,10 +4,10 @@
     <div class="container my-5">
         <a href="{{  url('admin/articles')  }}" class="my-3"><i class="fas fa-caret-left"></i>&nbsp; Retour à la liste des articles</a>
         <div class="row">
-{{ Form::open(array('url' => 'admin/new_article', 'class' => 'w-100', 'files' => true)) }}
+{{ Form::open(array('url' => 'admin/new_article', 'class' => 'w-100', 'files' => true, 'id'=> 'admin-form')) }}
             <div class="form-group">
                 <label for="title">Titre de l'article</label>
-                <input type="text" class="form-control"  name="title" id="title">
+                <input type="text" class="form-control"  name="title" id="title" required>
             </div>
             <div class="form-group">
                 <label for="ordering">Ordering</label>
@@ -23,7 +23,7 @@
             </div>
             <div class="form-group">
                 <label for="category_id">Catégorie</label>
-                <select id="category_id" name="category_id" class="form-control">
+                <select id="category_id" name="category_id" class="form-control" required>
                     <option selected disabled value="0">Choisir une catégorie</option>
                     @foreach($categories as $category)
                         <option value="{{ $category->id }}">{{ $category->title }}</option>
@@ -57,6 +57,13 @@
                 <input type="text" class="form-control" name="link" id="link" placeholder="">
             </div>
             <br>
+            {{--@if(!empty($errors->first('title')))--}}
+                {{--<p class="text-danger">Titre manquant</p>--}}
+            {{--@endif--}}
+            {{--@if(!empty($errors->first('category_id')))--}}
+                {{--<p class="text-danger">Catégorie manquante</p>--}}
+            {{--@endif--}}
+            {{ collect() }}
     <input type="submit" class=" btn btn-primary">
 {{ Form::close() }}
 <script>
