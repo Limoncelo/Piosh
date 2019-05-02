@@ -68,6 +68,7 @@ class AdminArticleController extends Controller
         $article->desc = Input::get('desc');
         $article->category_id = Input::get('category_id');
         $article->color = Input::get('color');
+        $article->link_redirect = Input::get('link_redirect');
         if(!empty($request->file('photo_1'))) {
             $image = $request->file('photo_1');
             $destinationPath = 'img/articles';
@@ -136,6 +137,7 @@ class AdminArticleController extends Controller
         $youtube = $request->youtube;
         $link = $request->link;
         $ordering = empty($request->ordering) ? 0 : $request->ordering;
+        $link_redirect = $request->link_redirect;
         $photos = DB::table('articles')->select('photo_1', 'photo_2')->where('id', $id)->first();
         if(!empty($request->file('photo_1'))) {
             $image = $request->file('photo_1');
@@ -172,7 +174,9 @@ class AdminArticleController extends Controller
                 'pos_photo' => $pos_photo,
                 'youtube' => $youtube,
                 'link' => $link,
-                'ordering' => $ordering));
+                'ordering' => $ordering,
+                'link_redirect' => $link_redirect
+                ));
         return redirect()->action(
             'AdminArticleController@index', ['id' => $id]
         );

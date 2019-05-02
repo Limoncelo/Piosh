@@ -18,7 +18,7 @@
                     <div class="flip-container" ontouchstart="this.classList.toggle('hover');">
                         <div class="flipper">
 
-                           <a href="{{ url('article/' . $item->id . '-' . CUSTOM_SLUG($item->title)) }}">
+                           <a href="{{ empty($item->link_redirect) ? url('article/' . $item->id . '-' . CUSTOM_SLUG($item->title)) : $item->link_redirect }}">
                             <div class="front">
                                 <h4 class="text-center red">{{ $item ->title }}</h4>
                             </div>

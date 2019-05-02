@@ -11,7 +11,7 @@
             </div>
             <div class="form-group">
                 <label for="ordering">Ordering</label>
-                <input type="int" class="form-control" name="ordering" id="ordering" >
+                <input type="number" class="form-control" name="ordering" id="ordering" >
             </div>
             <div class="form-group">
                 <label for="intro">Intro de l'article</label>
@@ -56,14 +56,12 @@
                 <label for="link">Lien</label>
                 <input type="text" class="form-control" name="link" id="link" placeholder="">
             </div>
+            <div class="form-group">
+                <label for="link_redirect">Lien de redirection</label>
+                <input type="text" class="form-control"  name="link_redirect" id="link_redirect" placeholder="">
+            </div>
             <br>
-            {{--@if(!empty($errors->first('title')))--}}
-                {{--<p class="text-danger">Titre manquant</p>--}}
-            {{--@endif--}}
-            {{--@if(!empty($errors->first('category_id')))--}}
-                {{--<p class="text-danger">Catégorie manquante</p>--}}
-            {{--@endif--}}
-            {{ collect() }}
+
     <input type="submit" class=" btn btn-primary">
 {{ Form::close() }}
 <script>
